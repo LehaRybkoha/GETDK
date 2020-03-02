@@ -1,0 +1,53 @@
+.main {
+	background-color: #EDB21C;
+	min-height: inherit;
+	@include align-center;
+	&-wrapper {
+		padding: 40px 28px 50px 28px;
+	}
+	&__head {
+		margin-bottom: 60px;
+		&-title {
+			font-size: rem(30px);
+			line-height: rem(35px);
+			color: #fff;
+			margin-bottom: 10px;
+		}
+		&-desc {
+			font-family: $PTFont;
+			font-size: rem(16px);
+			line-height: rem(25px);
+			color: #FFF1CF;
+		}
+	}
+	&__bottom {
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		&-item {
+			padding: 5px;
+		}
+		&-title {
+			font-size: rem(20px);
+			line-height: 27px;
+			color: #fff;
+			margin-bottom: 20px;
+		}
+		&-desc {
+			font-family: $PTFont;
+			font-size: rem(12px);
+			line-height: 15px;
+			color: #FFF1CF;
+			opacity: 0.8;
+			text-align: center;
+		}
+		&-pic {
+			width: 146px;
+			&:hover, &:active {
+				opacity: 0.6;
+			}
+		}
+	} 
+}

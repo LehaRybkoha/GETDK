@@ -1,0 +1,53 @@
+body {
+    font-family: $AvenirFont
+}
+select {
+    cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+p {
+    margin-top: 0;
+    margin: 0;
+}
+
+button, input {
+    border: none;
+}
+
+.wrapper {
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.wrapper-section {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.container {
+    @include container();
+    @include sm(max-width, 510px);
+    @include md(max-width, 690px);
+    @include lg(max-width, 930px);
+    @include xl(max-width, 1110px);
+}
