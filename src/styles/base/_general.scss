@@ -3,6 +3,8 @@ body {
 }
 select {
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 h1, h2, h3, h4, h5, h6, ul {
@@ -32,6 +34,11 @@ button, input {
     border: none;
 }
 
+fieldset {
+    border: none;
+    overflow-x: hidden;
+}
+
 .wrapper {
     min-height: 100vh;
     overflow: hidden;
@@ -41,7 +48,9 @@ button, input {
 
 .wrapper-section {
     max-width: 320px;
+    @include sm(max-width, 375px);
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .container {
