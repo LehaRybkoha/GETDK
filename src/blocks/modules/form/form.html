@@ -45,21 +45,23 @@
 						<p class="form__second-step--desc form__step--desc">Ответ на вопрос:<br>зачем я это ввожу?</p>
 					</div>
 					<div class="form-content">
-						<div class="form-content__field-block">
-							<p class="form-content__field-block--advice">Гос.рег.номер (без запятых и пробелов)</p>
+						<p class="form-content__advice">Гос.рег.номер (без запятых и пробелов)</p>
+						<div class="form-content__field-block form-content__field-checkblock">
 							<input type="text" id="inputGosNum" class="form-content__field-input form-content__field-input--gosNum" placeholder="A000AA100">
+							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputGosNum" id="checkinputGosNum"/>
+        					<label class="form-content__field-checkbox--full" for="checkinputGosNum">Нет</label>
 						</div>
 						<div class="form-content__field-block">
 							<select name="fuelType" id="selectFuelType" class="form-content__field-input form-content__field-input--fuelType"><option>Тип топлива</option>
 							<option>rtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyj</option>
 							</select>
 						</div>
+						<p class="form-content__advice">Минимальная масса</p>
 						<div class="form-content__field-block">
-							<p class="form-content__field-block--advice">Минимальная масса</p>
 							<input type="text" id="inputMinMass" class="form-content__field-input form-content__field-input--minMass" placeholder="Введите число">
 						</div>
+							<p class="form-content__advice">Максимальная масса</p>
 						<div class="form-content__field-block">
-							<p class="form-content__field-block--advice">Максимальная масса</p>
 							<input type="text" id="inputMaxMass" class="form-content__field-input form-content__field-input--maxMass" placeholder="Число, которое больше мин. массы">
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
@@ -68,6 +70,170 @@
 						<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
 						<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
 					</div>
+				</div>
+			</fieldset>
+
+			<!-- Step 3 -->
+
+			<fieldset>
+				<div class="form__third-step">
+					<div class="form-head">
+						<p class="form__third-step--text form__step--text">3<span>/5</span></p>
+						<h3 class="form__third-step--title form__step--title">Данные документа</h3>
+						<p class="form__third-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
+					</div>
+					<div class="form-content">
+						<div class="form-content__field-block form-content__field-checkblock">
+							<input сlass="form-content__field-checkinput" type="radio" name="checkinputDocument" id="checkinputSRTS"/>
+        					<label class="form-content__field-checkbox--document" for="checkinputSRTS">СРТС</label>
+        					<input сlass="form-content__field-checkinput" type="radio" name="checkinputDocument" id="checkinputPTS"/>
+        					<label class="form-content__field-checkbox--document" for="checkinputPTS">ПТС</label>
+        					<input сlass="form-content__field-checkinput" type="radio" name="checkinputDocument" id="checkinputDocument"/>
+        					<label class="form-content__field-checkbox--document" for="checkinputDocument">Иностранный документ</label>
+						</div>
+						<hr class="form__line" />
+						<div class="form-content__field-block form-content__field-halfblock">
+							<input type="text" id="inputSeries" class="form-content__field-input form-content__field-input--series" placeholder="Серия">
+							<input type="text" id="inputNumber" class="form-content__field-input form-content__field-input--number" placeholder="Номер">
+						</div>
+						<p class="form-content__advice">Дата выдачи документа</p>
+						<div class="form-content__field-block">
+							<input type="text" id="inputDate" class="form-content__field-input form-content__field-input--date" placeholder="ДД.ММ.ГГГГ">
+						</div>
+						<p class="form-content__desc">Все поля обязательны для заполнения</p>
+						</div>
+						<div class="form-footer">
+							<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
+							<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
+						</div>
+				</div>
+			</fieldset>
+
+			<!-- Step 4 -->
+
+			<fieldset>
+				<div class="form__fourth-step">
+					<div class="form-head">
+						<p class="form__fourth-step--text form__step--text">4<span>/5</span></p>
+						<h3 class="form__fourth-step--title form__step--title">Данные документа</h3>
+						<p class="form__fourth-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
+					</div>
+					<div class="form-content">
+						<p class="form-content__advice">Номер VIN</p>
+						<div class="form-content__field-block form-content__field-checkblock">
+							<input type="text" id="inputVin" class="form-content__field-input form-content__field-input--vin" placeholder="17 символов">
+							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputVin" id="checkinputVin"/>
+        					<label class="form-content__field-checkbox--full" for="checkinputVin">Нет</label>
+						</div>
+						<div class="form-content__field-block form-content__field-checkblock">
+							<input type="text" id="inputCarcass" class="form-content__field-input form-content__field-input--carcass" placeholder="Номер кузова">
+							<div class="form-content__field-semicheckblock">
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputCarcass" id="checkinputCarcass"/>
+        						<label class="form-content__field-checkbox--half" for="checkinputCarcass">Нет</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputCarcass" id="checkinputSameCarcass"/>
+        						<label class="form-content__field-checkbox--half" for="checkinputSameCarcass">Как Vin</label>
+							</div>
+						</div>
+						<div class="form-content__field-block form-content__field-checkblock">
+							<input type="text" id="input" class="form-content__field-input form-content__field-input--frame" placeholder="Номер шасси (рамы)">
+							<div class="form-content__field-semicheckblock">
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputFrame" id="checkinputFrame"/>
+        						<label class="form-content__field-checkbox--half" for="checkinputFrame">Нет</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputFrame" id="checkinputSameFrame"/>
+        						<label class="form-content__field-checkbox--half" for="checkinputSameFrame">Как Vin</label>
+							</div>
+						</div>
+						<p class="form-content__desc form-content__desc-fourth">Одно из полей должно быть обязательно заполнено</p>
+						<div class="form-content__use">
+							<h3 class="form-content__use-title form-content__add-title">Использование т/с</h3>
+							<div class="form-content__field-checkblock form-content__field-checkblock--big">
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputOwn"/>
+        						<label class="form-content__field-checkbox--big" for="checkinputOwn">Для<br>личных целей</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputRoute"/>
+        						<label class="form-content__field-checkbox--big" for="checkinputRoute">Для маршрутных перевозок</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputTaxi"/>
+        						<label class="form-content__field-checkbox--big" for="checkinputTaxi">В такси</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputStudy"/>
+        						<label class="form-content__field-checkbox--big" for="checkinputStudy">Для учебной езды</label>
+							</div>
+						</div>
+						<div class="form-content__tachograph">
+							<h3 class="form-content__tachograph-title form-content__add-title">У вас установлен тахограф?</h3>
+							<div class="form-content__field-checkblock form-content__field-checkblock--big">
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputYes"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--yesNo" for="checkinputYes">Да</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputNo"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--yesNo" for="checkinputNo">Нет</label>
+							</div>
+							<hr class="form__line"/>
+							<div class="form-content__field-block form-content__field-checkblock">
+								<input type="text" id="inputSerieNum" class="form-content__field-input form-content__field-input--SerieNum" placeholder="Серийный номер">
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputSerieNum" id="checkinputSerieNum"/>
+        						<label class="form-content__field-checkbox--full" for="checkinputSerieNum">Нет</label>
+							</div>
+							<div class="form-content__field-block form-content__field-checkblock">
+								<input type="text" id="inputMark" class="form-content__field-input form-content__field-input--Mark" placeholder="Марка">
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputMark" id="checkinputMark"/>
+        						<label class="form-content__field-checkbox--full" for="checkinputMark">Нет</label>
+							</div>
+							<div class="form-content__field-block form-content__field-checkblock">
+								<input type="text" id="inputModel" class="form-content__field-input form-content__field-input--Model" placeholder="Модель">
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputModel" id="checkinputModel"/>
+        						<label class="form-content__field-checkbox--full" for="checkinputModel">Нет</label>
+							</div>
+						</div>
+						</div>
+						<div class="form-footer">
+							<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
+							<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
+						</div>
+				</div>
+			</fieldset>
+
+			<!-- Step 5 -->
+
+			<fieldset>
+				<div class="form__five-step">
+					<div class="form-head">
+						<p class="form__five-step--text form__step--text">5<span>/5</span></p>
+						<h3 class="form__five-step--title form__step--title">Владелец т/с</h3>
+						<p class="form__five-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
+					</div>
+					<div class="form-content">
+						<div class="form-content__person">
+							<div class="form-content__field-checkblock form-content__field-checkblock--big">
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputPerson" id="checkinputHabitant"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputHabitant">Гражданин РФ</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputPerson" id="checkinputForeign"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputForeign">Иностранный гражданин</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputPhisical" id="checkinputPhisical"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputPhisical">Физическое лицо</label>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputPhisical" id="checkinputEntity"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputEntity">Юридическое лицо</label>
+							</div>
+						</div>
+						<hr class="form__line form__line--person" />
+						<div class="form-content__field-block">
+							<input type="text" id="inputCompany" class="form-content__field-input form-content__field-input--company" placeholder="Название организации/ИП">
+						</div>
+						<div class="form-content__field-block">
+							<input type="text" id="inputGenSurname" class="form-content__field-input form-content__field-input--genSurname" placeholder="Фамилия генерального директора">
+						</div>
+						<div class="form-content__field-block">
+							<input type="text" id="inputSurname" class="form-content__field-input form-content__field-input--surname" placeholder="Фамилия владельца т/с">
+						</div>
+						<div class="form-content__field-block">
+							<input type="text" id="inputName" class="form-content__field-input form-content__field-input--name" placeholder="Имя">
+						</div>
+						<div class="form-content__field-block">
+							<input type="text" id="inputPatronymic" class="form-content__field-input form-content__field-input--patronymic" placeholder="Отчество">
+						</div>
+					</div>
+				</div>
+						<div class="form-footer">
+							<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
+							<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
+						</div>
 				</div>
 			</fieldset>
 		</div>
