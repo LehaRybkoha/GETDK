@@ -9,15 +9,17 @@
 		margin-bottom: 60px;
 		&-title {
 			font-size: rem(30px);
-			line-height: rem(35px);
 			color: #fff;
 			margin-bottom: 10px;
+			@include lg(font-size, rem(50px));
 		}
 		&-desc {
 			font-family: $PTFont;
 			font-size: rem(16px);
 			line-height: rem(25px);
 			color: #FFF1CF;
+			max-width: 324px;
+			@include lg(font-size, rem(20px));
 		}
 	}
 	&__bottom {
@@ -25,6 +27,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
+			@include sm(justify-content, flex-start);
 		}
 		&-item {
 			padding: 5px;
@@ -34,6 +37,7 @@
 			line-height: 27px;
 			color: #fff;
 			margin-bottom: 20px;
+			@include lg(font-size, rem(20px));
 		}
 		&-desc {
 			font-family: $PTFont;
@@ -42,9 +46,11 @@
 			color: #FFF1CF;
 			opacity: 0.8;
 			text-align: center;
+			@include lg(font-size, rem(18px));
 		}
 		&-pic {
 			width: 146px;
+			@include lg(width, 200px);
 			&:hover, &:active {
 				opacity: 0.6;
 			}

@@ -1,10 +1,10 @@
 <section class="form-section">
 	<form id="form" action="#" method="POST" class="form">
 		<div class="form-wrapper wrapper-section">
-			
+
 			<!-- Step 1 -->
 
-			<fieldset>
+			<fieldset class="fieldset__first-step">
 				<div class="form__first-step">
 					<div class="form-head">
 						<p class="form__first-step--text form__step--text">1<span>/5</span></p>
@@ -12,32 +12,102 @@
 						<p class="form__first-step--desc form__step--desc">Это ускорит расчет<br>стоимости прохождения ТО</p>
 					</div>
 					<div class="form-content">
-						<div class="form-content__field-block">
-							<input type="text" id="inputMark" class="form-content__field-input form-content__field-input--mark" placeholder="Марка т/с">
+						<div class="form-content__field-block form-content__field-block">
+							<input name="inputMarkVeh" type="text" id="inputMarkVeh" class="form-content__field-input form-content__field-input--markVeh" placeholder="Марка т/с" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputCarModel" class="form-content__field-input form-content__field-input--carModel" placeholder="Модель автомобиля">
+							<input name="inputCarModel" type="text" id="inputCarModel" class="form-content__field-input form-content__field-input--carModel" placeholder="Модель автомобиля" required>
 						</div>
 						<div class="form-content__field-block">
-							<select name="releaseYear" id="selectReleaseYear" class="form-content__field-input form-content__field-input--releaseYear"><option>Год выпуска</option>
-							<option>rtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyj</option>
+							<select name="releaseYear" id="selectReleaseYear" class="form-content__field-input form-content__field-input--releaseYear" value="aaa">
+							<option>Год выпуска</option>
+							<option value="2020">2020</option>
+							<option value="2019">2019</option>
+							<option value="2018">2018</option>
+							<option value="2017">2017</option>
+							<option value="2016">2016</option>
+							<option value="2015">2015</option>
+							<option value="2014">2014</option>
+							<option value="2013">2013</option>
+							<option value="2012">2012</option>
+							<option value="2011">2011</option>
+							<option value="2010">2010</option>
+							<option value="2009">2009</option>
+							<option value="2008">2008</option>
+							<option value="2007">2007</option>
+							<option value="2006">2006</option>
+							<option value="2005">2005</option>
+							<option value="2004">2004</option>
+							<option value="2003">2003</option>
+							<option value="2002">2002</option>
+							<option value="2001">2001</option>
+							<option value="2000">2000</option>
+							<option value="1999">1999</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+							<option value="1996">1996</option>
+							<option value="1995">1995</option>
+							<option value="1994">1994</option>
+							<option value="1993">1993</option>
+							<option value="1992">1992</option>
+							<option value="1991">1991</option>
+							<option value="1990">1990</option>
+							<option value="1989">1989</option>
+							<option value="1988">1988</option>
+							<option value="1987">1987</option>
+							<option value="1986">1986</option>
+							<option value="1985">1985</option>
+							<option value="1984">1984</option>
+							<option value="1983">1983</option>
+							<option value="1982">1982</option>
+							<option value="1981">1981</option>
+							<option value="1980">1980</option>
+							<option value="1979">1979</option>
+							<option value="1978">1978</option>
+							<option value="1977">1977</option>
+							<option value="1976">1976</option>
+							<option value="1975">1975</option>
+							<option value="1974">1974</option>
+							<option value="1973">1973</option>
+							<option value="1972">1972</option>
+							<option value="1971">1971</option>
+							<option value="1970">1970</option>
+							<option value="1969">1969</option>
+							<option value="1968">1968</option>
+							<option value="1967">1967</option>
+							<option value="1966">1966</option>
+							<option value="1965">1965</option>
+							<option value="1964">1964</option>
+							<option value="1963">1963</option>
+							<option value="1962">1962</option>
+							<option value="1961">1961</option>
+							<option value="1960">1960</option>
+							<option value="1959">1959</option>
+							<option value="1958">1958</option>
+							<option value="1957">1957</option>
+							<option value="1956">1956</option>
+							<option value="1955">1955</option>
+							<option value="1954">1954</option>
+							<option value="1953">1953</option>
+							<option value="1952">1952</option>
+							<option value="1951">1951</option>
+							<option value="1950">1950</option>
 							</select>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputMileage" class="form-content__field-input form-content__field-input--mileage" placeholder="Пробег">
+							<input name="inputMileage" type="text" id="inputMileage" class="form-content__field-input form-content__field-input--mileage" placeholder="Пробег" required>
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
 					</div>
 					<div class="form-footer">
-						<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
-						<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
+						<p id="desc" class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
 					</div>
 				</div>
 			</fieldset>
 
 			<!-- Step 2 -->
 
-			<fieldset>
+			<fieldset class="fieldset__second-step">
 				<div class="form__second-step">
 					<div class="form-head">
 						<p class="form__second-step--text form__step--text">2<span>/5</span></p>
@@ -47,35 +117,49 @@
 					<div class="form-content">
 						<p class="form-content__advice">Гос.рег.номер (без запятых и пробелов)</p>
 						<div class="form-content__field-block form-content__field-checkblock">
-							<input type="text" id="inputGosNum" class="form-content__field-input form-content__field-input--gosNum" placeholder="A000AA100">
+							<div class="hint-wrapper">
+								<input name="inputGosNum" type="text" id="inputGosNum" class="form-content__field-input input-hint--opacity form-content__field-input--gosNum" placeholder="A000AA100" required>
+								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
+								<div class="hint">
+									<p class="hint-text">Используйте русские буквы и цифры.<br>Если гос.номера нет, нажмите "Нет"</p>
+									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
+								</div>
+							</div>
 							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputGosNum" id="checkinputGosNum"/>
         					<label class="form-content__field-checkbox--full" for="checkinputGosNum">Нет</label>
 						</div>
 						<div class="form-content__field-block">
 							<select name="fuelType" id="selectFuelType" class="form-content__field-input form-content__field-input--fuelType"><option>Тип топлива</option>
-							<option>rtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyjrtjjyyjyjyjrryjyj</option>
+							<option value="Бензин">Бензин</option>
+							<option value="Дизель">Дизель</option>
+							<option value="Газ">Газ</option>
+							<option value="Без топлива">Без топлива</option>
 							</select>
 						</div>
 						<p class="form-content__advice">Минимальная масса</p>
 						<div class="form-content__field-block">
-							<input type="text" id="inputMinMass" class="form-content__field-input form-content__field-input--minMass" placeholder="Введите число">
+							<input name="inputMinMass" type="text" id="inputMinMass" class="form-content__field-input form-content__field-input--minMass" placeholder="Введите число" required>
 						</div>
 							<p class="form-content__advice">Максимальная масса</p>
 						<div class="form-content__field-block">
-							<input type="text" id="inputMaxMass" class="form-content__field-input form-content__field-input--maxMass" placeholder="Число, которое больше мин. массы">
+							<input name="inputMaxMass" type="text" id="inputMaxMass" class="form-content__field-input input-hint--opacity form-content__field-input--maxMass" placeholder="Число, которое больше мин. массы" required>
+							<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
+							<div class="hint">
+								<p class="hint-text">Максимальная масса должна быть больше минимальной</p>
+								<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
+							</div>
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
 					</div>
 					<div class="form-footer">
 						<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
-						<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
 					</div>
 				</div>
 			</fieldset>
 
 			<!-- Step 3 -->
 
-			<fieldset>
+			<fieldset class="fieldset__third-step">
 				<div class="form__third-step">
 					<div class="form-head">
 						<p class="form__third-step--text form__step--text">3<span>/5</span></p>
@@ -83,35 +167,52 @@
 						<p class="form__third-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
 					</div>
 					<div class="form-content">
-						<div class="form-content__field-block form-content__field-checkblock">
+						<div class="form-content__field-block form-content__field-checkblock form-content__field-checkblockDocument">
 							<input сlass="form-content__field-checkinput" type="radio" name="checkinputDocument" id="checkinputSRTS"/>
         					<label class="form-content__field-checkbox--document" for="checkinputSRTS">СРТС</label>
         					<input сlass="form-content__field-checkinput" type="radio" name="checkinputDocument" id="checkinputPTS"/>
         					<label class="form-content__field-checkbox--document" for="checkinputPTS">ПТС</label>
-        					<input сlass="form-content__field-checkinput" type="radio" name="checkinputDocument" id="checkinputDocument"/>
+        					<input сlass="form-content__field-checkinput checkinputDocumentForeign" type="radio" name="checkinputDocument" id="checkinputDocument"/>
         					<label class="form-content__field-checkbox--document" for="checkinputDocument">Иностранный документ</label>
 						</div>
 						<hr class="form__line" />
 						<div class="form-content__field-block form-content__field-halfblock">
-							<input type="text" id="inputSeries" class="form-content__field-input form-content__field-input--series" placeholder="Серия">
-							<input type="text" id="inputNumber" class="form-content__field-input form-content__field-input--number" placeholder="Номер">
+							<input name="inputSeries" type="text" id="inputSeries" class="form-content__field-input form-content__field-input--series" placeholder="Серия" maxlength="4" required>
+							<input name="inputNumber" type="text" id="inputNumber" class="form-content__field-input input-hint--opacity form-content__field-input--number" placeholder="Номер" maxlength="6" minlength="6" required>
+							<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
+							<div class="hint">
+								<ol class="hint__list">
+									<li class="hint__item">
+										<p class="hint-text hint-text--reset">СРТС - Серия должна состоять из 4х символов</p>
+									</li>
+									<li class="hint__item">
+										<p class="hint-text hint-text--reset">ПТС - Серия должна состоять из 2х цифр и 2х букв</p>
+									</li>
+									<li class="hint__item">
+										<p class="hint-text hint-text--reset">СРТС и ПТС - Номер документа должен состоять из 6 цифр</p>
+									</li>
+									<li class="hint__item">
+										<p class="hint-text hint-text--reset">Иностранный документ - В номере документа указываются только цифры</p>
+									</li>
+								</ol>
+								<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
+							</div>
 						</div>
 						<p class="form-content__advice">Дата выдачи документа</p>
 						<div class="form-content__field-block">
-							<input type="text" id="inputDate" class="form-content__field-input form-content__field-input--date" placeholder="ДД.ММ.ГГГГ">
+							<input name="inputDate" type="text" id="inputDate" class="form-content__field-input form-content__field-input--date" placeholder="ДД.ММ.ГГГГ" required>
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
 						</div>
 						<div class="form-footer">
 							<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
-							<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
 						</div>
 				</div>
 			</fieldset>
 
 			<!-- Step 4 -->
 
-			<fieldset>
+			<fieldset class="fieldset__fourth-step">
 				<div class="form__fourth-step">
 					<div class="form-head">
 						<p class="form__fourth-step--text form__step--text">4<span>/5</span></p>
@@ -121,25 +222,32 @@
 					<div class="form-content">
 						<p class="form-content__advice">Номер VIN</p>
 						<div class="form-content__field-block form-content__field-checkblock">
-							<input type="text" id="inputVin" class="form-content__field-input form-content__field-input--vin" placeholder="17 символов">
+							<div class="hint-wrapper">
+								<input name="inputVin" type="text" id="inputVin" class="form-content__field-input input-hint--opacity form-content__field-input--vin" placeholder="17 символов" maxlength="17" minlength="17" required>
+								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
+								<div class="hint">
+									<p class="hint-text">Используйте английские<br>буквы и цифры."</p>
+									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
+								</div>
+							</div>
 							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputVin" id="checkinputVin"/>
         					<label class="form-content__field-checkbox--full" for="checkinputVin">Нет</label>
 						</div>
 						<div class="form-content__field-block form-content__field-checkblock">
-							<input type="text" id="inputCarcass" class="form-content__field-input form-content__field-input--carcass" placeholder="Номер кузова">
+							<input name="inputCarcass" type="text" id="inputCarcass" class="form-content__field-input form-content__field-input--carcass" placeholder="Номер кузова" required>
 							<div class="form-content__field-semicheckblock">
-								<input сlass="form-content__field-checkinput" type="radio" name="checkinputCarcass" id="checkinputCarcass"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputCarcass" id="checkinputCarcass"/>
         						<label class="form-content__field-checkbox--half" for="checkinputCarcass">Нет</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputCarcass" id="checkinputSameCarcass"/>
+        						<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputCarcass" id="checkinputSameCarcass"/>
         						<label class="form-content__field-checkbox--half" for="checkinputSameCarcass">Как Vin</label>
 							</div>
 						</div>
 						<div class="form-content__field-block form-content__field-checkblock">
-							<input type="text" id="input" class="form-content__field-input form-content__field-input--frame" placeholder="Номер шасси (рамы)">
+							<input name="inputFrame" type="text" id="inputFrame" class="form-content__field-input form-content__field-input--frame" placeholder="Номер шасси (рамы)" required>
 							<div class="form-content__field-semicheckblock">
-								<input сlass="form-content__field-checkinput" type="radio" name="checkinputFrame" id="checkinputFrame"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputFrame" id="checkinputFrame"/>
         						<label class="form-content__field-checkbox--half" for="checkinputFrame">Нет</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputFrame" id="checkinputSameFrame"/>
+        						<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputFrame" id="checkinputSameFrame"/>
         						<label class="form-content__field-checkbox--half" for="checkinputSameFrame">Как Vin</label>
 							</div>
 						</div>
@@ -147,7 +255,7 @@
 						<div class="form-content__use">
 							<h3 class="form-content__use-title form-content__add-title">Использование т/с</h3>
 							<div class="form-content__field-checkblock form-content__field-checkblock--big">
-								<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputOwn"/>
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputOwn" required checked>
         						<label class="form-content__field-checkbox--big" for="checkinputOwn">Для<br>личных целей</label>
         						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputRoute"/>
         						<label class="form-content__field-checkbox--big" for="checkinputRoute">Для маршрутных перевозок</label>
@@ -160,7 +268,7 @@
 						<div class="form-content__tachograph">
 							<h3 class="form-content__tachograph-title form-content__add-title">У вас установлен тахограф?</h3>
 							<div class="form-content__field-checkblock form-content__field-checkblock--big">
-								<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputYes"/>
+								<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputYes" required />
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--yesNo" for="checkinputYes">Да</label>
         						<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputNo"/>
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--yesNo" for="checkinputNo">Нет</label>
@@ -185,14 +293,13 @@
 						</div>
 						<div class="form-footer">
 							<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
-							<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
 						</div>
 				</div>
 			</fieldset>
 
 			<!-- Step 5 -->
 
-			<fieldset>
+			<fieldset class="fieldset__five-step">
 				<div class="form__five-step">
 					<div class="form-head">
 						<p class="form__five-step--text form__step--text">5<span>/5</span></p>
@@ -201,39 +308,62 @@
 					</div>
 					<div class="form-content">
 						<div class="form-content__person">
-							<div class="form-content__field-checkblock form-content__field-checkblock--big">
-								<input сlass="form-content__field-checkinput" type="radio" name="checkinputPerson" id="checkinputHabitant"/>
+							<div class="form-content__field-checkblock form-content__field-checkblockPerson form-content__field-checkblock--big">
+								<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPersonCountry" id="checkinputHabitant" checked>
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputHabitant">Гражданин РФ</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputPerson" id="checkinputForeign"/>
+        						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPersonCountry" id="checkinputForeign">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputForeign">Иностранный гражданин</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputPhisical" id="checkinputPhisical"/>
-        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputPhisical">Физическое лицо</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputPhisical" id="checkinputEntity"/>
-        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputEntity">Юридическое лицо</label>
+        						<input сlass="form-content__field-checkinput checkinputPerson" type="checkbox" name="checkinputPhisical" id="checkinputPhisical" checked>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person disable--js" for="checkinputPhisical">Физическое лицо</label>
+        						<input сlass="form-content__field-checkinput checkinputPerson" type="checkbox" name="checkinputPhisical" id="checkinputEntity"/>
+        						<label class="form-content__field-checkbox--big form-content__field-checkbox--person disable--js" for="checkinputEntity">Юридическое лицо</label>
 							</div>
 						</div>
 						<hr class="form__line form__line--person" />
 						<div class="form-content__field-block">
-							<input type="text" id="inputCompany" class="form-content__field-input form-content__field-input--company" placeholder="Название организации/ИП">
+							<input type="text" id="inputCompany" class="form-content__field-input form-content__field-input--company" placeholder="Название организации/ИП" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputGenSurname" class="form-content__field-input form-content__field-input--genSurname" placeholder="Фамилия генерального директора">
+							<input type="text" id="inputGenSurname" class="form-content__field-input form-content__field-input--genSurname" placeholder="Фамилия генерального директора" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputSurname" class="form-content__field-input form-content__field-input--surname" placeholder="Фамилия владельца т/с">
+							<input type="text" id="inputSurname" class="form-content__field-input form-content__field-input--surname" placeholder="Фамилия владельца т/с" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputName" class="form-content__field-input form-content__field-input--name" placeholder="Имя">
+							<input type="text" id="inputName" class="form-content__field-input form-content__field-input--name" placeholder="Имя" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputPatronymic" class="form-content__field-input form-content__field-input--patronymic" placeholder="Отчество">
+							<input type="text" id="inputPatronymic" class="form-content__field-input form-content__field-input--patronymic" placeholder="Отчество" required>
 						</div>
 					</div>
+					<div class="form-footer">
+						<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
+					</div>
 				</div>
-						<div class="form-footer">
-							<p class="form-footer__desc">Мы не передаем<br>информацию третьим лицам</p>
-							<button class="form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>
+			</fieldset>
+
+			<!-- Step 6 -->
+
+			<fieldset class="fieldset__six-step">
+				<div class="form__six-step">
+					<div class="form-head">
+						<h3 class="form__six-step--title form__step--title">Это последний этап</h3>
+						<p class="form__six-step--desc form__step--desc">Далее вы узнаете стоимость и выберете способ оформления ДК</p>
+					</div>
+					<div class="form-content">
+						<p class="form-content__advice form-content__advice-six">Для получения готового документа</p>
+						<div class="form-content__field-block form-content__field-block">
+							<input name="email" type="text" id="inputEmail" class="form-content__field-input form-content__field-input--email" placeholder="User@mail.ru" required>
 						</div>
+						<p class="form-content__advice form-content__advice-six">Мы отправим СМС о готовности документа</p>
+						<div class="form-content__field-block">
+							<input name="inputPhone" type="text" id="inputPhone" class="form-content__field-input form-content__field-input--phone" placeholder="+ 7 (000) 000-00-00" required>
+						</div>
+					</div>
+					<div class="form-footer form-footer-six">
+						<button class="submit-btn" type="submit">Рассчитать стоимость</button>
+						<p class="form-footer__desc form-footer__desc-six">Мы не передаем информацию третьим лицам</p>
+					</div>
 				</div>
 			</fieldset>
 		</div>

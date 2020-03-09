@@ -1,67 +1,80 @@
-.main, .form__first-step, .form__second-step, .form__third-step, .form-content__use, .form-content__tachograph, .form__fourth-step {
+.form-section {
 	display: none;
 }
 
 .form {
+	@include sm(position, relative);
 	&-section {
 		background-color: #F6F6F6;
 		min-height: inherit;
-		@include align-center;
+		align-items: center;
 		justify-content: center;
 	}
 	&-head {
 		margin: 25px 0 30px 0;
 	}
+	&__six-step {
+		&--title {
+			color: #FFF1CF !important;
+		}
+		&--desc {
+			color: #FFF1CF !important;
+		}
+	}
 	&__step {
 		&--text {
-			font-size: rem(18px);
-			line-height: 25px;
+			font-size: rem(18px);	
 			color: #2C2C2C;
 			margin-bottom: 10px;
+			@include lg(font-size, rem(28px));
 		}
 		&--text span{
 			font-size: rem(18px);
-			line-height: 25px;
 			color: #2C2C2C;
 			margin-bottom: 10px;
 			opacity: 0.5;
+			@include lg(font-size, rem(28px));
 		}
 		&--title {
 			font-size: rem(18px);
-			line-height: 25px;
 			color: #2C2C2C;
 			margin-bottom: 10px;
+			@include lg(font-size, rem(28px));
 		}
 		&--desc {
 			font-family: $PTFont;
 			font-size: rem(16px);
-			line-height: 25px;
 			color: #777777;
+			line-height: 25px;
+			@include lg(font-size, rem(20px));
 		}
 	}
 	&-content {
 		margin-bottom: 50px;
 		&__add-title {
 			font-size: rem(18px);
-			line-height: 25px;
+			
 			color: #2C2C2C;
 			margin: 30px 0 10px 0;
 		}
 		&__advice {
 				font-family: $PTFont;
 				font-size: rem(12px);
-				line-height: 15px;
 				color: #B5B5B5;
 				margin-bottom: 10px;
+				&-six {
+					color: #FFF1CF;
+				}
 			}
 		&__field {
 			&-checkblock {
 				display: flex;
-				align-items: center;
-				justify-content: space-between;
+				align-items: flex-start;
+				justify-content: flex-start;
+				@include lg(justify-content, space-between)
 				&--big {
 					flex-wrap: wrap;
-					justify-content: start;
+					max-width: 425px;
 				}
 			}
 			&-checkbox {
@@ -72,7 +85,7 @@
 					box-sizing: border-box;
 					background-color: #fff;
 					font-size: rem(16px);
-					line-height: 20px;
+					
 					color: #777777;
 					border: 1px solid #fff;
 					cursor: pointer;
@@ -88,7 +101,7 @@
 					box-sizing: border-box;
 					background-color: #fff;
 					font-size: rem(12px);
-					line-height: 20px;
+					
 					color: #777777;
 					border: 1px solid #fff;
 					cursor: pointer;
@@ -100,12 +113,13 @@
 					height: 60px;
 					width: 144px;
 					@include sm(width, 176px);
+					@include lg(width, 201px);
 					border-radius: 7px;
 					font-family: $PTFont;
 					box-sizing: border-box;
 					background-color: #fff;
 					font-size: rem(15px);
-					line-height: 20px;
+					
 					color: #777777;
 					border: 1px solid #fff;
 					cursor: pointer;
@@ -130,7 +144,7 @@
 					border-radius: 7px;
 					background: url(/img/СРТС.png);
 					font-size: rem(18px);
-					line-height: 20px;
+					
 					color: #2C2C2C;
 					border: 1px solid #fff;
 					cursor: pointer;
@@ -151,7 +165,9 @@
 			&-block {
 				max-width: 291px;
 				@include sm(max-width, 360px);
+				@include lg(max-width, 425px);
 				margin-bottom: 10px;
+				position: relative;
 			}
 			&-halfblock {
 				display: flex;
@@ -161,7 +177,6 @@
 				border-radius: 7px;
 				font-family: $PTFont;
 				font-size: rem(16px);
-				line-height: 20px;
 				color: #777777;
 				width: 100%;
 				box-sizing: border-box;
@@ -176,27 +191,56 @@
 		&__desc {
 			font-family: $PTFont;
 			font-size: rem(12px);
-			line-height: 15px;
 			color: #B5B5B5;
 			text-align: center;
+			max-width: 320px;
+			@include sm(max-width, 375px);
+			@include lg(max-width, 475px);
 		}
 	}
 	&-footer {
 		@include align-center;
 		font-family: $PTFont;
+		&-six {
+			display: block;
+			margin-top: 100px;
+		}
 		&__desc {
 			font-size: rem(12px);
-			line-height: 15px;
 			color: #B5B5B5;
 			margin-right: 40px;
 			white-space: nowrap;
+			@include lg(font-size, rem(18px));
+			&-six {
+				text-align: center;
+				color: #FFF1CF;
+				opacity: 0.8;
+				margin-right: 0;
+				margin-top: 10px;
+			}
+		}
+		&__btn-prev {
+			background: none;
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			@include sm(top, 40px);
+			@include sm(left, -70px);
+			@include sm(background-color, #fff);
+			@include sm(width, 60px);
+			@include sm(height, 60px);
+			@include md(width, 75px);
+			@include md(height, 75px);
+			@include md(top, 55px);
+			@include md(left, -100px);
+			@include sm(border-radius, 100%);
 		}
 		&__btn-next {
 			display: flex;
 			align-items: center;
 			font-size: rem(16px);
 			@include sm(font-size, rem(18px));
-			line-height: 25px;
+			
 			color: #2C2C2C;
 			padding: 15px 45px 15px 20px;
 			@include sm(padding, 15px 105px 15px 20px);
@@ -295,4 +339,122 @@ input[type=checkbox], input[type=radio] {
 	    border: 1px solid rgba(254, 197, 48, 0.5);
 	    border-radius: 7px;
 	}
+}
+
+label.error {
+    clear : none;
+    width : auto;
+    margin-left : 10px;
+    color : red;
+}
+
+input[disabled=disabled] {
+	background-color: #e4dfdf;
+	opacity: 0.8;
+}
+
+.disable {
+	opacity: 0.3;
+}
+
+.valid {
+	border: 2px solid #3DA94E;
+}
+
+input.error{
+	border: 2px solid #E8415F;
+}
+
+label.error {
+	color: #E8415F;
+	font-family: $PTFont;
+	font-size: rem(12px);
+}
+
+.hint-icon, .hint-cancel {
+	position: absolute;
+	color: #fff;
+	right: -22px;
+	top: 3px;
+	font-size: rem(12px);
+}
+
+.input-hint, .popup-hint {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 25px 25px 0;
+	border-color: transparent #2c2c2c transparent transparent;
+	background-color: #fff;
+	border-style: inset;
+	padding: 0;
+	opacity: 0.2;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.popup-hint {
+	opacity: 1;
+}
+
+.hint {
+	z-index: 11;
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	top: 12px;
+	width: calc(100% + 20px);
+	min-height: 60px;
+	border-radius: 7px;
+	align-items: center;
+	right: 48%;
+	margin-right: calc(100% / -2);
+	&-text {
+		font-family: $PTFont;
+		font-size: rem(12px);
+		color: #777777;
+		padding-left: 20px;
+		max-width: 176px;
+		&--reset {
+			max-width: 100%;
+			padding-left: 0;
+		}
+	}
+	&-wrapper {
+		width: 100%;
+		position: relative;
+	}
+	&__item {
+		list-style: disc;
+	}
+}
+
+label#inputSeries-error, label#inputNumber-error, label#inputCarcass-error, label#inputFrame-error {
+	display: none !important;
+}
+
+.form-content__field-input--company, .form-content__field-input--genSurname {
+	display: none;
+}
+
+button.form-wizard-next.form-footer__btn-next.valid {
+	border: none;
+}
+
+.submit-btn {
+	background-color: #2C2C2C;
+	color: #fff;
+	height: 60px;
+	white-space: nowrap;
+	border-radius: 7px;
+	font-family: $PTFont;
+	font-size: rem(18px);
+	width: 100%;
+	max-width: 320px;
+	@include sm(max-width, 375px);
+	@include lg(max-width, 425px);
 }

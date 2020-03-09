@@ -3,8 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
     entry: {
-        main: "./src/js/index.js",
-        page: "./src/js/page.js"
+        main: "./src/js/index.js"
     },
     
     output: {
