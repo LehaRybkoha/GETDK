@@ -1,5 +1,5 @@
 .main {
-	background-color: #EDB21C;
+	background: linear-gradient(180deg, #FFD567 0%, #D89A04 100%);
 	min-height: inherit;
 	@include align-center;
 	&-wrapper {
@@ -56,4 +56,13 @@
 			}
 		}
 	} 
+}
+
+.auto-animation {
+	position: absolute;
+	left: -360%;
+	@include lg(left, -100%);
+	z-index: 999;
+	// transition: all 4s ease-in-out;
+	// transform: translate(300%,0);
 }

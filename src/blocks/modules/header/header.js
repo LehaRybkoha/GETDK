@@ -6,7 +6,7 @@ $(function() {
 		$("html").css("background-color", "white");
 	});
 	$( ".nav-open" ).click(function(){
-		$("#nav").css("width", "320px");
+		$("#nav").css("width", "100%");
 		$("html").css("background", "rgba(44, 44, 44, 0.7) !important");
 		$("html").css("transition", "0.5s");
 	});

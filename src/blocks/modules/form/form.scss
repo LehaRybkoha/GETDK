@@ -51,6 +51,9 @@
 	}
 	&-content {
 		margin-bottom: 50px;
+		&__tachograph-wrapper {
+			display: none;
+		}
 		&__add-title {
 			font-size: rem(18px);
 			
@@ -136,6 +139,7 @@
 					@include sm(max-width, 176px);
 				}
 				&--document {
+					position: relative;
 					@include align-center;
 					text-align: center;
 					justify-content: center;
@@ -143,8 +147,7 @@
 					height: 100px;
 					border-radius: 7px;
 					background: url(/img/СРТС.png);
-					font-size: rem(18px);
-					
+					font-size: rem(18px);				
 					color: #2C2C2C;
 					border: 1px solid #fff;
 					cursor: pointer;
@@ -220,6 +223,7 @@
 			}
 		}
 		&__btn-prev {
+			display: none;
 			background: none;
 			position: absolute;
 			top: 20px;
@@ -240,10 +244,10 @@
 			align-items: center;
 			font-size: rem(16px);
 			@include sm(font-size, rem(18px));
-			
 			color: #2C2C2C;
-			padding: 15px 45px 15px 20px;
-			@include sm(padding, 15px 105px 15px 20px);
+			height: 60px;
+			padding: 0 30px 0 15px;
+			@include sm(padding, 0 105px 0 20px);
 			border: 1px solid #FEC530;
 			background-color: #FEC530;
 			border-radius: 5px;
@@ -293,6 +297,8 @@ input[type=checkbox], input[type=radio] {
 		@include sm(width, 100px);
 		@include sm(height, 100px);
 		position: absolute;
+		top: 0;
+		left: 0;
 		background-color: rgba(254, 197, 48, 0.5);
 		justify-content: center;
 		display: flex;
@@ -311,6 +317,8 @@ input[type=checkbox], input[type=radio] {
 		@include sm(width, 100px);
 		@include sm(height, 100px);
 		position: absolute;
+		top: 0;
+		left: 0;
 		background-color: rgba(254, 197, 48, 0.5);
 		justify-content: center;
 		display: flex;
@@ -329,6 +337,8 @@ input[type=checkbox], input[type=radio] {
 		height: 98px;
 		@include sm(width, 100px);
 		@include sm(height, 100px);
+		top: 0;
+		left: 0;
 		position: absolute;
 		background-color: rgba(254, 197, 48, 0.5);
 		justify-content: center;
@@ -362,6 +372,10 @@ input[disabled=disabled] {
 }
 
 input.error{
+	border: 2px solid #E8415F;
+}
+
+select.error{
 	border: 2px solid #E8415F;
 }
 
@@ -433,7 +447,7 @@ label.error {
 	}
 }
 
-label#inputSeries-error, label#inputNumber-error, label#inputCarcass-error, label#inputFrame-error {
+label#inputSeries-error, label#inputNumber-error, label#inputCarcass-error, label#inputFrame-error, label#checkinputUse-error, label#checkinputYesNo-error {
 	display: none !important;
 }
 
@@ -441,7 +455,11 @@ label#inputSeries-error, label#inputNumber-error, label#inputCarcass-error, labe
 	display: none;
 }
 
-button.form-wizard-next.form-footer__btn-next.valid {
+button.form-footer__btn-next.valid {
+	border: none;
+}
+
+button.form-footer__btn-prev.valid {
 	border: none;
 }
 
@@ -457,4 +475,62 @@ button.form-wizard-next.form-footer__btn-next.valid {
 	max-width: 320px;
 	@include sm(max-width, 375px);
 	@include lg(max-width, 425px);
+}
+
+.payment {
+	display: none;
+	max-width: 340px;
+	@include lg(max-width, 450px);
+	&-wrapper {
+		position: relative;
+		&::before {
+			content: url(/img/payment-car.png);
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		background-color: #fff;
+		border-radius: 7px;
+		padding: 80px 20px 30px 20px;
+	}
+	&__title {
+		font-size: rem(30px);
+		color: #2C2C2C;
+		margin-bottom: 30px;
+	}
+	&__price {
+		color: #2C2C2C;
+		font-size: rem(18px);
+		text-align: center;
+	}
+	&__desc {
+		color: #777777;
+		font-size: rem(16px);
+		font-family: $PTFont;
+		max-width: 270px;
+		line-height: 25px;
+		& span {
+			color: #2C2C2C;
+			font-weight: bold;
+		}
+		&--first {
+			margin-bottom: 20px;
+		}
+		&--second {
+			margin-bottom: 85px;
+		}
+		&--fourth {
+			margin-top: 20px;
+		}
+		&-btn {
+			font-size: rem(12px);
+			color: #B5B5B5;
+			opacity: 0.8;
+			font-family: $PTFont;
+			text-align: center;
+		}
+	}
+	&__submit-btn {
+		margin: 10px 0;
+	}
 }

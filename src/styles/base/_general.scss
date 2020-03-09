@@ -39,6 +39,11 @@ button {
     outline: none;
 }
 
+button[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+}
+
 input {
     border: none;
     &:focus {

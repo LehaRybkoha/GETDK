@@ -1,14 +1,21 @@
 .header {
-
+  margin-bottom: -1px;
+  @include md(background-color, #FFD567);
   &-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 60px;
   }
+  &-right {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .nav {
+  max-width: 320px;
+  @include lg(max-width, 475px!important);
   height: 100%;
   width: 0;
   position: fixed;
@@ -78,6 +85,7 @@
 .logo {
   &-link {
     @include align-center();
+    @include sm(position, static !important);
   } 
   &-pic {
     margin-right: 10px;
@@ -86,6 +94,8 @@
     font-size: rem(22px);
     line-height: rem(30px);
     color: #2C2C2C;
+    white-space: nowrap;
+    @include sm(display, block!important);
   }
 }
 
@@ -115,4 +125,14 @@
     .nav__item:nth-child(2) {
       padding: 60px 0;
     }
+}
+
+.email {
+  display: none;
+  @include md(display, block);
+  margin-right: 60px;
+  &-link {
+    font-size: rem(20px);
+    color: #fff;
+  }
 }

@@ -4,7 +4,7 @@
         
         var settings = {
             'prevButton': '<button type="button" class="form-footer__btn-prev" id="form-wizard-prev" ><img class="form-footer__btn-prev--pic" src="/img/prevBtn.png"></button>',
-            'nextButton': '<button type="button" class="form-wizard-next form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>',
+            'nextButton': '<button type="button" class="form-wizard-next form-footer__btn-next" disabled>Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>',
             'activeClass': 'form-wizard-active',
             'element': 'fieldset',
             'footerDesc': '.form-footer__desc',
