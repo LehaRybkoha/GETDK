@@ -111,17 +111,24 @@ $(document).ready(function() {
         $(".auto-animation").css("transform", "translateX(500%)")
         $(".auto-animation").css("transition", "all 5s ease-in-out")
         $(".auto-animation").css("will-change", "transform");
+        $(".auto-animation").css("will-change", "transform");
+        let transitionAnimate = "all 4s ease-in-out";
+        let transformAnimate = "rotate(5000deg)";
+        $("<style>.auto-animation:before{transition:" + transitionAnimate + "}</style>").appendTo(".auto-animation");
+        $("<style>.auto-animation:before{transform:" + transformAnimate + "}</style>").appendTo(".auto-animation");
+        $("<style>.auto-animation:after{transition:" + transitionAnimate + "}</style>").appendTo(".auto-animation");
+        $("<style>.auto-animation:after{transform:" + transformAnimate + "}</style>").appendTo(".auto-animation");
+        // $(".auto-animation,.auto-animation ").cssAfter("transform", "translate(300%,0)");
     });
 
     $("#bike, #sedan").click(function(){
         setTimeout(function() {
-             $(".main").css("display", "none");
              $(".form-section").css("display", "flex");
              $(".form-content__tachograph").css("display", "none");
              $(".logo-link").css("position", "absolute");
              $(".logo-link").css("left", "42%");
              $(".logo-link").css("bottom", "25%");
-             $(".logo-desc").hide();
+             $(".logo-desc, .main").hide();
              $(".header").css("position", "relative");
              $(".header").css("background-color", "#fff");
         }, 3000);
@@ -130,13 +137,11 @@ $(document).ready(function() {
 
     $("#bus, #truck").click(function(){
         setTimeout(function() {
-        	 $(".main").css("display", "none");
         	 $(".form-section").css("display", "flex");
-        	 $(".form-content__use").css("display", "none");
         	 $(".logo-link").css("position", "absolute");
         	 $(".logo-link").css("left", "42%");
         	 $(".logo-link").css("bottom", "25%");
-        	 $(".logo-desc").hide();
+        	 $(".logo-desc, .form-content__use, .main").hide();
         	 $(".header").css("position", "relative");
              $(".header").css("background-color", "#fff");
              $(".email").css("color", "#2C2C2C");

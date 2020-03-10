@@ -1,0 +1,33 @@
+.public-offer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #FEC530 0%, #D89A04 100%) !important;
+	padding: 40px 13px 10px;
+	&__title {
+		margin-bottom: 10px;
+		&-text {
+			font-size: rem(30px);
+			line-height: 45px;
+			color: #fff;
+		}
+	}
+	&-content {
+		&__text {
+			font-family: $PTFont;
+			font-size: rem(16px);
+			line-height: 25px;
+			color: #FFF1CF;
+		}
+		&__list {
+			&-title {
+				margin-top: 35px;
+				font-family: $PTFont;
+				font-size: rem(16px);
+				line-height: 25px;
+				color: #FFF1CF;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+.nFound {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #FEC530 0%, #D89A04 100%) !important;
+	.nFound__title {
+		padding: 105px 0 35px 0;
+		text-align: center;
+		&-text {
+			font-size: rem(30px);
+			color: #2C2C2C;
+			margin-bottom: 20px;
+		}
+		&-desc {
+			color: #2C2C2C;
+			font-size: rem(30px);
+		}
+	}
+	&-content {
+		text-align: center;
+		margin-bottom: 95px;
+	}
+	&__submit-btn {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+		align-items: center;
+	}
+}
