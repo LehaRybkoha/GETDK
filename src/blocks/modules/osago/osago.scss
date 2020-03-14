@@ -43,5 +43,19 @@
 			color: #2C2C2C;
 			margin-bottom: 10px;
 		}
+		&--second {  
+			margin: 0 auto;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
 	}
+}
+
+.osago .wrapper-section {
+	min-width: 340px;
+}
+
+.sravni-widget {
+	display: none;
 }

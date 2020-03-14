@@ -4,7 +4,7 @@
         
         var settings = {
             'prevButton': '<button type="button" class="form-footer__btn-prev" id="form-wizard-prev" ><img class="form-footer__btn-prev--pic" src="/img/prevBtn.png"></button>',
-            'nextButton': '<button type="button" class="form-wizard-next form-footer__btn-next" disabled>Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>',
+            'nextButton': '<button type="button" class="form-wizard-next form-footer__btn-next">Далее <i class="fas fa-arrow-right form-footer__btn-next--icon"></i></button>',
             'activeClass': 'form-wizard-active',
             'element': 'fieldset',
             'footerDesc': '.form-footer__desc',
@@ -116,7 +116,17 @@
 
             $(next).click(function () {
                 var active = container.find(activeClassSelector);
-
+                var vin = $("#inputVin");
+                var frame = $("#inputFrame");
+                var carcass = $("#inputCarcass");
+                    if (frame.val().length < 1 && carcass.val().length < 1 && vin.val().length < 1) {
+                        $("#inputVin").attr("required", "required");
+                        $("#inputVin-error").show();
+                        $("#inputVin").removeAttr("disabled");
+                        $("#checkinputVin:checked").prop("checked", false);
+                        $(".inputCarcass").removeClass("error");
+                        $(".inputFrame").removeClass("error");
+                }
                 /* Check to see if the forms are valid before moving on */
 
                 if (active.find(":input").valid()) {

@@ -95,7 +95,7 @@
 							</select>
 						</div>
 						<div class="form-content__field-block">
-							<input name="inputMileage" type="text" id="inputMileage" class="form-content__field-input form-content__field-input--mileage" placeholder="Пробег" required>
+							<input name="inputMileage" id="inputMileage" class="form-content__field-input form-content__field-input--mileage" type="number" pattern="[0-9]*" placeholder="Пробег" required>
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
 					</div>
@@ -118,14 +118,14 @@
 						<p class="form-content__advice">Гос.рег.номер (без запятых и пробелов)</p>
 						<div class="form-content__field-block form-content__field-checkblock">
 							<div class="hint-wrapper">
-								<input name="inputGosNum" type="text" id="inputGosNum" class="form-content__field-input input-hint--opacity form-content__field-input--gosNum" placeholder="A000AA100" required>
+								<input name="inputGosNum" type="text" id="inputGosNum" class="form-content__field-input input-hint--opacity form-content__field-input--gosNum" oninput="this.value = this.value.toUpperCase()" placeholder="A000AA100" required>
 								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 								<div class="hint">
 									<p class="hint-text">Используйте русские буквы и цифры.<br>Если гос.номера нет, нажмите "Нет"</p>
 									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
 								</div>
 							</div>
-							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputGosNum" id="checkinputGosNum"/>
+							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputGosNum" id="checkinputGosNum">
         					<label class="form-content__field-checkbox--full" for="checkinputGosNum">Нет</label>
 						</div>
 						<div class="form-content__field-block">
@@ -138,11 +138,11 @@
 						</div>
 						<p class="form-content__advice">Минимальная масса</p>
 						<div class="form-content__field-block">
-							<input name="inputMinMass" type="text" id="inputMinMass" class="form-content__field-input form-content__field-input--minMass" placeholder="Введите число" required>
+							<input name="inputMinMass" type="number" pattern="[0-9]*" id="inputMinMass" class="form-content__field-input form-content__field-input--minMass" placeholder="Введите число" required>
 						</div>
 							<p class="form-content__advice">Максимальная масса</p>
 						<div class="form-content__field-block">
-							<input name="inputMaxMass" type="text" id="inputMaxMass" class="form-content__field-input input-hint--opacity form-content__field-input--maxMass" placeholder="Число, которое больше мин. массы" required>
+							<input name="inputMaxMass" type="number" pattern="[0-9]*" id="inputMaxMass" class="form-content__field-input input-hint--opacity form-content__field-input--maxMass" placeholder="Число, которое больше мин. массы" required>
 							<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 							<div class="hint">
 								<p class="hint-text">Максимальная масса должна быть больше минимальной</p>
@@ -175,7 +175,7 @@
         					<input сlass="form-content__field-checkinput checkinputDocumentForeign checkinputDocument" type="radio" name="checkinputDocument" value="Иностранный документ" id="checkinputDocument">
         					<label class="form-content__field-checkbox--document" for="checkinputDocument">Иностранный документ</label>
 						</div>
-						<hr class="form__line" />
+						<hr class="form__line" >
 						<div class="form-content__field-block form-content__field-halfblock">
 							<input name="inputSeries" type="text" id="inputSeries" class="form-content__field-input form-content__field-input--series" placeholder="Серия" maxlength="4" required>
 							<input name="inputNumber" type="text" id="inputNumber" class="form-content__field-input input-hint--opacity form-content__field-input--number" placeholder="Номер" maxlength="6" minlength="6" required>
@@ -230,7 +230,7 @@
 									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
 								</div>
 							</div>
-							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputVin" id="checkinputVin"/>
+							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputVin" id="checkinputVin">
         					<label class="form-content__field-checkbox--full" for="checkinputVin">Нет</label>
 						</div>
 						<div class="form-content__field-block form-content__field-checkblock">
@@ -243,9 +243,9 @@
 								</div>
 							</div>
 							<div class="form-content__field-semicheckblock">
-								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputCarcass" id="checkinputCarcass"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputCarcass" id="checkinputCarcass">
         						<label class="form-content__field-checkbox--half" for="checkinputCarcass">Нет</label>
-        						<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputCarcass" id="checkinputSameCarcass"/>
+        						<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputCarcass" id="checkinputSameCarcass">
         						<label class="form-content__field-checkbox--half" for="checkinputSameCarcass">Как Vin</label>
 							</div>
 						</div>
@@ -259,9 +259,9 @@
 								</div>
 							</div>
 							<div class="form-content__field-semicheckblock">
-								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputFrame" id="checkinputFrame"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputFrame" id="checkinputFrame">
         						<label class="form-content__field-checkbox--half" for="checkinputFrame">Нет</label>
-        						<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputFrame" id="checkinputSameFrame"/>
+        						<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputFrame" id="checkinputSameFrame">
         						<label class="form-content__field-checkbox--half" for="checkinputSameFrame">Как Vin</label>
 							</div>
 						</div>
@@ -269,13 +269,13 @@
 						<div class="form-content__use">
 							<h3 class="form-content__use-title form-content__add-title">Использование т/с</h3>
 							<div class="form-content__field-checkblock checkblock-using form-content__field-checkblock--big">
-								<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputOwn">
+								<input сlass="form-content__field-checkinput check-use" type="radio" name="checkinputUse" id="checkinputOwn">
         						<label class="form-content__field-checkbox--big" for="checkinputOwn">Для<br>личных целей</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputRoute"/>
+        						<input сlass="form-content__field-checkinput check-use" type="radio" name="checkinputUse" id="checkinputRoute">
         						<label class="form-content__field-checkbox--big" for="checkinputRoute">Для маршрутных перевозок</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputTaxi"/>
+        						<input сlass="form-content__field-checkinput check-use" type="radio" name="checkinputUse" id="checkinputTaxi">
         						<label class="form-content__field-checkbox--big" for="checkinputTaxi">В такси</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputUse" id="checkinputStudy"/>
+        						<input сlass="form-content__field-checkinput check-use" type="radio" name="checkinputUse" id="checkinputStudy">
         						<label class="form-content__field-checkbox--big" for="checkinputStudy">Для учебной езды</label>
 							</div>
 						</div>
@@ -284,24 +284,24 @@
 							<div class="form-content__field-checkblock form-content__field-checkblock--big tachYesNo">
 								<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputYes">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--yesNo" for="checkinputYes">Да</label>
-        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputNo"/>
+        						<input сlass="form-content__field-checkinput" type="radio" name="checkinputYesNo" id="checkinputNo">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--yesNo" for="checkinputNo">Нет</label>
 							</div>
-							<hr class="form__line"/>
+							<hr class="form__line">
 							<div class="form-content__tachograph-wrapper">
 								<div class="form-content__field-block form-content__field-checkblock">
 								<input type="text" id="inputSerieNum" class="form-content__field-input form-content__field-input--SerieNum" placeholder="Серийный номер" required>
-								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputSerieNum" id="checkinputSerieNum"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputSerieNum" id="checkinputSerieNum">
         						<label class="form-content__field-checkbox--full" for="checkinputSerieNum">Нет</label>
 							</div>
 							<div class="form-content__field-block form-content__field-checkblock">
 								<input type="text" id="inputMark" class="form-content__field-input form-content__field-input--Mark" placeholder="Марка" required>
-								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputMark" id="checkinputMark"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputMark" id="checkinputMark">
         						<label class="form-content__field-checkbox--full" for="checkinputMark">Нет</label>
 							</div>
 							<div class="form-content__field-block form-content__field-checkblock">
 								<input type="text" id="inputModel" class="form-content__field-input form-content__field-input--Model" placeholder="Модель" required>
-								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputModel" id="checkinputModel"/>
+								<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputModel" id="checkinputModel">
         						<label class="form-content__field-checkbox--full" for="checkinputModel">Нет</label>
 							</div>
 							</div>
@@ -329,13 +329,13 @@
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputHabitant">Гражданин РФ</label>
         						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPersonCountry" id="checkinputForeign">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputForeign">Иностранный гражданин</label>
-        						<input сlass="form-content__field-checkinput checkinputPerson" type="checkbox" name="checkinputPhisical" id="checkinputPhisical">
+        						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPhisical" id="checkinputPhisical">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person disable--js" for="checkinputPhisical">Физическое лицо</label>
-        						<input сlass="form-content__field-checkinput checkinputPerson" type="checkbox" name="checkinputPhisical" id="checkinputEntity"/>
+        						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPhisical" id="checkinputEntity">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person disable--js" for="checkinputEntity">Юридическое лицо</label>
 							</div>
 						</div>
-						<hr class="form__line form__line--person" />
+						<hr class="form__line form__line--person" >
 						<div class="form-content__field-block">
 							<input type="text" id="inputCompany" name="inputCompany" class="form-content__field-input form-content__field-input--company" placeholder="Название организации/ИП" required>
 						</div>

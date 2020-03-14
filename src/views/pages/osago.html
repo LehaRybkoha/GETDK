@@ -21,6 +21,9 @@
         <!-- icon -->
         <link rel="shortcut icon" href="../img/favicons/apple-touch-icon.png" type="image/x-icon">
         <link rel="apple-touch-icon" href="../../img/favicons/apple-touch-icon.png">
+        
+        <!-- Osago -->
+        <script src="https://sravni.ru/f/apps/build/widgets/sravni-widgets.js"></script>
 
         <!-- Fonts -->
         <link href="" rel="stylesheet">
@@ -77,15 +80,15 @@
                  </div>
                  <div class="osago-content">
                      <p class="osago-content-text">Для оформления ОСАГО необходима диагностическая карта</p>
-                 </div>
-                     <img src="/img/osago.png" alt="osago" class="osago-load"></img>
+                 </div>                    
+                     <sravni-widget class="sravni-widget" type='osago' theme='sravni_blue' partner='avtogibdd' inIframe='false' hide-partners='true'></sravni-widget>
                  <div class="osago-footer">
                      <button type="button" class="submit-btn osago__submit-btn osago__submit-btn--first">Она у меня есть</button>
-                     <button type="button" class="submit-btn osago__submit-btn--second">Её у меня нет</button>
+                     <a href="/index.html" class="submit-btn osago__submit-btn--second">Её у меня нет</a> 
                  </div>
              </div>
          </section>
-
+        
         <script src="../js/main.js"></script>
     </body>
 </html>

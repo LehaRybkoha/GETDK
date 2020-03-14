@@ -19,6 +19,14 @@
 			font-size: rem(16px);
 			line-height: 25px;
 			color: #FFF1CF;
+			text-transform: uppercase;
+		}
+		&__item-text {
+			font-family: $PTFont;
+			font-size: rem(16px);
+			line-height: 25px;
+			color: #FFF1CF;
+			text-transform: uppercase !important;
 		}
 		&__list {
 			&-title {

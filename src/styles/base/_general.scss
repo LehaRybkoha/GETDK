@@ -39,26 +39,33 @@ button {
     outline: none;
 }
 
-button[disabled] {
+button[disabled], input[disabled] {
     opacity: 0.5;
     cursor: auto;
 }
 
-input {
+input, select {
     border: none;
     &:focus {
         outline: none;
         border: 2px solid #FEC530;
     }
 }
+ input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 fieldset {
     border: none;
-    overflow-x: hidden;
 }
 
 .wrapper {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -69,7 +76,6 @@ fieldset {
     @include sm(max-width, 375px);
     @include lg(max-width, 475px);
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .container {

@@ -1,5 +1,7 @@
 .form-section {
 	display: none;
+	position: relative;
+	padding-bottom: 20px;
 }
 
 .form {
@@ -64,7 +66,7 @@
 				font-family: $PTFont;
 				font-size: rem(12px);
 				color: #B5B5B5;
-				margin-bottom: 10px;
+				margin-bottom: 15px;
 				&-six {
 					color: #FFF1CF;
 				}
@@ -159,6 +161,11 @@
 					margin: 0 10px 20px 0;
 					padding-left: 24px;
 				}
+				&-input {
+					&--gosNum {
+						text-transform: uppercase;
+					}
+				}
 			}
 			&-semicheckblock, &-checkbox--full {
 				display: flex;
@@ -166,9 +173,9 @@
 				margin-left: 5px;
 			}
 			&-block {
-				max-width: 291px;
-				@include sm(max-width, 360px);
-				@include lg(max-width, 425px);
+				min-width: 300px;
+				@include sm(min-width, 375px)
+				@include lg(min-width, 425px);
 				margin-bottom: 10px;
 				position: relative;
 			}
@@ -226,7 +233,7 @@
 			display: none;
 			background: none;
 			position: absolute;
-			top: 20px;
+			top: -40px;
 			left: 20px;
 			@include sm(top, 40px);
 			@include sm(left, -70px);
@@ -246,11 +253,14 @@
 			@include sm(font-size, rem(18px));
 			color: #2C2C2C;
 			height: 60px;
-			padding: 0 30px 0 15px;
-			@include sm(padding, 0 105px 0 20px);
 			border: 1px solid #FEC530;
 			background-color: #FEC530;
-			border-radius: 5px;
+			border-radius: 5px 0 0 5px;
+			position: absolute;
+			right: 0;
+			width: 130px;
+			@include md(width, 134px);
+			padding-left: 23px;
 			&--icon {
 				margin-left: 5px;
 			}
@@ -388,8 +398,8 @@ label.error {
 .hint-icon, .hint-cancel {
 	position: absolute;
 	color: #fff;
-	right: -22px;
-	top: 3px;
+	right: -24px;
+	top: 4px;
 	font-size: rem(12px);
 }
 
@@ -400,7 +410,7 @@ label.error {
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 25px 25px 0;
+	border-width: 0 30px 30px 0;
 	border-color: transparent #2c2c2c transparent transparent;
 	background-color: #fff;
 	border-style: inset;
@@ -532,5 +542,18 @@ button.form-footer__btn-prev.valid {
 	}
 	&__submit-btn {
 		margin: 10px 0;
+	}
+}
+
+.bread-crumb {
+	display: none;
+}
+
+@media screen and (min-width: 375px) {
+	.form-content__field-block {
+		min-width: 320px;
+	}
+	.form-footer__btn-next {
+		width: 164px;
 	}
 }
