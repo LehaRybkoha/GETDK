@@ -148,16 +148,16 @@ $(document).ready(function() {
     // while (i = 0) {
     //     checkMass()
     // }
-    $(maxMass, minMass).on("blur", function(){
-        let maxVal = minMass.val();
-        let minVal = maxMass.val();
+    // $(maxMass, minMass).on("blur", function(){
+    //     let maxVal = minMass.val();
+    //     let minVal = maxMass.val();
 
-        if (maxVal.length > 0 && minVal.length > 0) {
-            if (maxVal > minVal || minVal < maxVal) {
-                alert("yeah");
-            }
-        }
-    });
+    //     if (maxVal.length > 0 && minVal.length > 0) {
+    //         if (maxVal > minVal || minVal < maxVal) {
+    //             alert("yeah");
+    //         }
+    //     }
+    // });
 
     $(".input-hint").mouseenter(function() {
          $(this).parent().find(".hint").css("display", "flex");
