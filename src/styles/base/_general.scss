@@ -3,8 +3,16 @@ body {
 }
 select {
     cursor: pointer;
+    background: none;
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
-
+option[selected] {
+    opacity: 0.5;
+    color: #fff;
+}
 h1, h2, h3, h4, h5, h6, ul {
     padding: 0;
     margin: 0;
@@ -28,12 +36,46 @@ p {
     margin: 0;
 }
 
-button, input {
+button {
     border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+button[disabled], input[disabled] {
+    opacity: 0.5;
+    cursor: auto;
+}
+input:not([type=checkbox]):not([type=radio]),
+textarea, 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input, select {
+    border: none;
+    &:focus {
+        outline: none;
+        border: 2px solid #FEC530;
+    }
+}
+ input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+fieldset {
+    border: none;
+    padding: 0;
 }
 
 .wrapper {
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     overflow: hidden;
     position: relative;
     margin: 0 auto;
@@ -41,6 +83,8 @@ button, input {
 
 .wrapper-section {
     max-width: 320px;
+    @include sm(max-width, 375px);
+    @include lg(max-width, 475px);
     margin: 0 auto;
 }
 

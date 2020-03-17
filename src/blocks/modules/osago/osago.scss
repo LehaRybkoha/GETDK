@@ -1,0 +1,62 @@
+.osago {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #FEC530 0%, #D89A04 100%) !important;
+	padding: 40px 20px 105px;
+	&-load {
+		display: none;
+	}
+	&__title {
+		margin-bottom: 150px; 
+		&-text {
+			font-size: rem(30px);
+			color: #fff;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		&-desc {
+			display: none;
+			font-size: rem(18px);
+			color: #fff;
+			text-align: center;
+			margin-bottom: 40px;
+		}
+	}
+	&-content {
+		margin-bottom: 150px;
+		&-text {
+			font-size: rem(18px);
+			line-height: 25px;
+			color: #fff;
+			text-align: center;
+		}
+	}
+	&-footer {
+		text-align: center;
+	}
+	&__submit-btn {
+		&--first {
+			background: none !important;
+			border: 2px solid #2C2C2C;
+			color: #2C2C2C;
+			margin-bottom: 10px;
+		}
+		&--second {  
+			margin: 0 auto;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+	}
+}
+
+.osago .wrapper-section {
+	min-width: 340px;
+	@include lg(min-width, 475px);
+}
+
+.sravni-widget {
+	display: none;
+}

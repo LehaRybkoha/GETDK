@@ -1,0 +1,44 @@
+.success {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(180deg, #FEC530 0%, #D89A04 100%) !important;
+	&-wrapper {
+		padding: 0 28px 106px 28px;
+		max-width: 340px;
+	    @include lg(max-width, 450px);
+	}
+	&__title {
+		&-text {
+			color: #fff;
+			font-size: rem(30px);
+			padding: 80px 0;
+		}
+	}
+	&__desc {
+		&-title {
+			font-size: rem(18px);
+			color: #fff;
+			margin-bottom: 10px;
+		}
+		&-text {
+			font-family: $PTFont;
+			font-size: rem(16px);
+			line-height: 25px;
+			color: #FFF1CF;
+			&--first {
+				margin-bottom: 20px;
+			}
+		}
+	}
+	&__submit-btn {
+		margin-top: 106px;
+		display: flex;
+		justify-content: space-around;
+	}
+}
+
+.form-footer__btn-prev-success {
+	display: block !important;
+}

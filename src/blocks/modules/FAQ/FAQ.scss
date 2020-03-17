@@ -1,0 +1,66 @@
+.faq {
+	display: flex;
+	justify-content: center;
+	@include lg(align-items, center);
+	min-height: calc(100vh - 60px);
+	background: linear-gradient(180deg, #FEC530 0%, #D89A04 100%) !important;
+	padding: 40px 13px 10px;
+	&__title {
+		margin-bottom: 65px;
+		&-text {
+			font-size: rem(30px);
+			@include lg(font-size, rem(36px));
+			line-height: 45px;
+			color: #fff;
+		}
+	}
+	&-content {
+		&__item {
+			&-button {
+				transition: all 0.4s ease-in-out;
+			}
+			&-title {
+				display: flex;
+				justify-content: center;
+				&--text {
+					color: #fff;
+					font-size: rem(18px);
+					@include lg(font-size, rem(24px));
+					@include xl(font-size, rem(28px));
+					@include lg(line-height, 38px);
+					line-height: 25px;
+					margin-right: 80px;
+				}
+			}
+			&-text {
+				font-family: $PTFont;
+				font-size: rem(16px);
+				@include lg(font-size, rem(20px));
+				line-height: 25px;
+				color: #FFF1CF;
+				max-width: 320px;
+				padding: 20px 0;
+			}
+			&-link {
+				color: #FFF1CF;
+				font-family: $PTFont;
+				font-size: rem(16px);
+				&:hover {
+					border-bottom: 2px solid #fff;
+				}
+			}
+			&-button {
+				background-color: #fff;
+				border-radius: 100%;
+				width: 50px;
+				height: 50px;
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+}
+
+.rotate {
+	transform: rotate(45deg);
+}

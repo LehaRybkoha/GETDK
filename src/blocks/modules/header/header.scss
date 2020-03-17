@@ -1,13 +1,38 @@
 .header {
+  margin-bottom: -1px;
+  &-success {
+    position: relative;
+    @include md(position, relative);
+    @include md(background, #fac42f !important);
+  }
+  &-public-offer {
+    @include md(background, #fac42f !important);
+  }
+  &-nFound {
+    background-color: #fff !important;
+  }
+  &-public-offer {
+    background-color: #fff !important;
+  }
+  @include md(background-color, #FFD567);
   &-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 60px;
   }
+  &-success {
+    background: #fff !important;
+  }
+  &-right {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .nav {
+  max-width: 320px;
+  @include lg(max-width, 475px!important);
   height: 100%;
   width: 0;
   position: fixed;
@@ -46,6 +71,7 @@
     font-size: rem(36px);
     color: #F6F6F6;
     transition: 0.3s;
+    background: none;
     &:hover {
       color: darken(#fff, 30%);
     }
@@ -77,6 +103,12 @@
 .logo {
   &-link {
     @include align-center();
+    @include sm(position, static !important);
+    &-success {
+      left: 42%;
+      bottom: 25%;
+      position: absolute;
+    }
   } 
   &-pic {
     margin-right: 10px;
@@ -85,6 +117,11 @@
     font-size: rem(22px);
     line-height: rem(30px);
     color: #2C2C2C;
+    white-space: nowrap;
+    @include sm(display, block!important);
+    &-success {
+      display: none;
+    }
   }
 }
 
@@ -113,5 +150,26 @@
 @media screen and (min-height: 460px) {
     .nav__item:nth-child(2) {
       padding: 60px 0;
+    }
+}
+
+.email {
+  display: none;
+  @include md(display, block);
+  margin-right: 60px;
+  &-link {
+    @include md(color, #fff);
+    font-size: rem(20px);
+    color: #fff;
+  }
+    &-success {
+      color: #2C2C2C;
+    }
+    &-nFound {
+      color: #2C2C2C !important;
+    }
+    &-public-offer {
+      color: #2C2C2C !important;
+      @include md(color, #fff !important);
     }
 }

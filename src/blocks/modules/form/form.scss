@@ -1,0 +1,605 @@
+.form-section {
+	display: none;
+	position: relative;
+	padding-bottom: 20px;
+}
+
+.form {
+	@include sm(position, relative);
+	&-section {
+		background-color: #F6F6F6;
+		min-height: inherit;
+		align-items: center;
+		justify-content: center;
+	}
+	&-head {
+		margin: 25px 0 30px 0;
+	}
+	&__six-step {
+		&--title {
+			color: #FFF1CF !important;
+		}
+		&--desc {
+			color: #FFF1CF !important;
+		}
+	}
+	&__step {
+		&--text {
+			font-size: rem(18px);	
+			color: #2C2C2C;
+			margin-bottom: 10px;
+			@include lg(font-size, rem(28px));
+		}
+		&--text span{
+			font-size: rem(18px);
+			color: #2C2C2C;
+			margin-bottom: 10px;
+			opacity: 0.5;
+			@include lg(font-size, rem(28px));
+		}
+		&--title {
+			font-size: rem(18px);
+			color: #2C2C2C;
+			margin-bottom: 10px;
+			@include lg(font-size, rem(28px));
+		}
+		&--desc {
+			font-family: $PTFont;
+			font-size: rem(16px);
+			color: #777777;
+			line-height: 25px;
+			@include lg(font-size, rem(20px));
+		}
+	}
+	&-content {
+		margin-bottom: 50px;
+		&__tachograph-wrapper {
+			display: none;
+		}
+		&__add-title {
+			font-size: rem(18px);
+			
+			color: #2C2C2C;
+			margin: 30px 0 10px 0;
+		}
+		&__advice {
+				font-family: $PTFont;
+				font-size: rem(12px);
+				color: #B5B5B5;
+				margin-bottom: 15px;
+				&-six {
+					color: #FFF1CF;
+				}
+			}
+		&__field {
+			&-checkblock {
+				display: flex;
+				align-items: flex-start;
+				justify-content: flex-start;
+				@include lg(justify-content, space-between)
+				&--big {
+					flex-wrap: wrap;
+					max-width: 425px;
+				}
+			}
+			&-checkblockDocument {
+				justify-content: space-between;
+			}
+			&-checkbox {
+				&--full {
+					padding: 20px 31px;
+					border-radius: 7px;
+					font-family: $PTFont;
+					box-sizing: border-box;
+					background-color: #fff;
+					font-size: rem(16px);
+					
+					color: #777777;
+					border: 1px solid #fff;
+					cursor: pointer;
+				}
+				&--half {
+					width: 90px;
+					height: 28px;
+					justify-content: center;
+					display: flex;
+					align-items: center;
+					border-radius: 7px;
+					font-family: $PTFont;
+					box-sizing: border-box;
+					background-color: #fff;
+					font-size: rem(12px);
+					
+					color: #777777;
+					border: 1px solid #fff;
+					cursor: pointer;
+					&:last-child {
+						margin-top: 5px;
+					}
+				}
+				&--big {
+					height: 60px;
+					width: 144px;
+					@include sm(width, 176px);
+					@include lg(width, 201px);
+					border-radius: 7px;
+					font-family: $PTFont;
+					box-sizing: border-box;
+					background-color: #fff;
+					font-size: rem(15px);
+					
+					color: #777777;
+					border: 1px solid #fff;
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					margin: 0 5px 5px 0;
+					padding-left: 16px;
+					@include sm(padding-left, 16px);
+				}
+				&--yesNo {
+					padding: 0 !important;
+					justify-content: center;
+					max-width: 155px;
+					@include sm(max-width, 176px);
+				}
+				&--srts {
+					background: url(/img/СРТС.png);
+					position: relative;
+					@include align-center;
+					text-align: center;
+					justify-content: center;
+					width: 100px;
+					height: 100px;
+					border-radius: 7px;
+					font-size: rem(18px);				
+					color: #2C2C2C;
+					border: 1px solid #fff;
+					cursor: pointer;
+					&:last-child {
+						font-size: rem(12px);
+					}
+				}
+				&--pts {
+					background: url(/img/ПТС.png);
+					position: relative;
+					@include align-center;
+					text-align: center;
+					justify-content: center;
+					width: 100px;
+					height: 100px;
+					border-radius: 7px;
+					font-size: rem(18px);				
+					color: #2C2C2C;
+					border: 1px solid #fff;
+					cursor: pointer;
+					&:last-child {
+						font-size: rem(12px);
+					}
+				}
+				&--document {
+					background: url(/img/ПТС.png);
+					position: relative;
+					@include align-center;
+					text-align: center;
+					justify-content: center;
+					width: 100px;
+					height: 100px;
+					border-radius: 7px;
+					font-size: rem(18px);				
+					color: #2C2C2C;
+					border: 1px solid #fff;
+					cursor: pointer;
+					&:last-child {
+						font-size: rem(12px);
+					}
+				}
+				&--person {
+					margin: 0 10px 20px 0;
+					padding-left: 24px;
+				}
+				&-input {
+					&--gosNum {
+						text-transform: uppercase;
+					}
+				}
+			}
+			&-semicheckblock, &-checkbox--full {
+				display: flex;
+				flex-direction: column;
+				margin-left: 5px;
+			}
+			&-block {
+				min-width: 300px;
+				@include sm(width, 375px)
+				@include lg(width, 425px);
+				margin-bottom: 10px;
+				position: relative;
+			}
+			&-halfblock {
+				display: flex;
+			}
+			&-input {
+				padding: 20px 0 20px 20px;
+				border-radius: 7px;
+				font-family: $PTFont;
+				font-size: rem(16px);
+				color: #777777;
+				width: 100%;
+				box-sizing: border-box;
+				background-color: #fff;
+				-webkit-box-shadow: none;
+				-moz-box-shadow: none;
+				box-shadow:none;
+				&--series {
+					margin-right: 5px;
+					max-width: 29%;
+					@include sm(max-width, 24%);
+				}
+			}
+		}
+		&__desc {
+			font-family: $PTFont;
+			font-size: rem(12px);
+			color: #B5B5B5;
+			text-align: center;
+			max-width: 320px;
+			@include sm(max-width, 375px);
+			@include lg(max-width, 475px);
+		}
+	}
+	&-footer {
+		@include align-center;
+		font-family: $PTFont;
+		&-six {
+			display: block;
+			margin-top: 100px;
+		}
+		&__desc {
+			font-size: rem(12px);
+			color: #B5B5B5;
+			margin-right: 40px;
+			white-space: nowrap;
+			@include lg(font-size, rem(18px));
+			&-six {
+				text-align: center;
+				color: #FFF1CF;
+				opacity: 0.8;
+				margin-right: 0;
+				margin-top: 10px;
+			}
+		}
+		&__btn-prev {
+			display: none;
+			background: none;
+			position: absolute;
+			top: -40px;
+			left: 20px;
+			@include sm(top, 40px);
+			@include sm(left, -70px);
+			@include sm(background-color, #fff);
+			@include sm(width, 60px);
+			@include sm(height, 60px);
+			@include md(width, 75px);
+			@include md(height, 75px);
+			@include md(top, 55px);
+			@include md(left, -100px);
+			@include sm(border-radius, 100%);
+		}
+		&__btn-next {
+			display: flex;
+			align-items: center;
+			font-size: rem(16px);
+			@include sm(font-size, rem(18px));
+			color: #2C2C2C;
+			height: 60px;
+			border: 1px solid #FEC530;
+			background-color: #FEC530;
+			border-radius: 5px 0 0 5px;
+			position: absolute;
+			right: 0;
+			width: 130px;
+			@include placeholder();
+			@include md(width, 134px);
+			padding-left: 23px;
+			&--icon {
+				margin-left: 5px;
+			}
+		}
+	}
+	&__line {
+		margin: 20px 0;
+		color: #777777;
+		opacity: 0.2;
+		border: 1px solid #777777;
+		&--person {
+			margin-top: 0;
+		}
+	}
+}
+
+.selectDisabled {
+	color: #777777 !important;
+	opacity: 0.5;
+}
+
+.form-content__desc-fourth {
+	text-align: start;
+	@include sm(text-align, center);
+}
+
+input[type=checkbox], input[type=radio] {
+	position: absolute;
+	left: -9999px;
+}
+
+.form-content__field-checkblock input[type=checkbox]:checked + label{
+	background-color: #FEC530;
+	color: #fff;
+    border: 1px solid #FEC530;
+}
+
+.form-content__field-checkblock input[type=radio]:checked + label{
+	position: relative;
+	background-color: #FEC530;
+	color: #fff;
+}
+
+#checkinputSRTS:checked + label {
+	&::after {
+		content: "СРТС";
+		width: 93px;
+		height: 98px;
+		@include sm(width, 100px);
+		@include sm(height, 100px);
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(254, 197, 48, 0.5);
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		color: #2C2C2C;
+		font-size: rem(18px);
+	    border: 1px solid rgba(254, 197, 48, 0.5);
+	    border-radius: 7px;
+	}
+}
+#checkinputPTS:checked + label {
+	&::after {
+		content: "ПТС";
+		width: 93px;
+		height: 98px;
+		@include sm(width, 100px);
+		@include sm(height, 100px);
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(254, 197, 48, 0.5);
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		color: #2C2C2C;
+		font-size: rem(18px);
+	    border: 1px solid rgba(254, 197, 48, 0.5);
+	    border-radius: 7px;
+	}
+}
+
+#checkinputDocument:checked + label {
+	&::after {
+		content: "Иностранный документ";
+		width: 93px;
+		height: 98px;
+		@include sm(width, 100px);
+		@include sm(height, 100px);
+		top: 0;
+		left: 0;
+		position: absolute;
+		background-color: rgba(254, 197, 48, 0.5);
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		color: #2C2C2C;
+		font-size: rem(12px);
+	    border: 1px solid rgba(254, 197, 48, 0.5);
+	    border-radius: 7px;
+	}
+}
+
+label.error {
+    clear : none;
+    width : auto;
+    margin-left : 10px;
+    color : red;
+}
+
+input[disabled=disabled] {
+	background-color: #e4dfdf;
+	opacity: 0.8;
+}
+
+.disable {
+	opacity: 0.3;
+}
+
+.valid {
+	border: 2px solid #3DA94E;
+}
+
+input.error{
+	border: 2px solid #E8415F;
+}
+
+select.error{
+	border: 2px solid #E8415F;
+}
+
+label.error {
+	color: #E8415F;
+	font-family: $PTFont;
+	font-size: rem(12px);
+}
+
+.hint-icon, .hint-cancel {
+	position: absolute;
+	color: #fff;
+	right: -24px;
+	top: 4px;
+	font-size: rem(12px);
+}
+
+.input-hint, .popup-hint {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 30px 30px 0;
+	border-color: transparent #2c2c2c transparent transparent;
+	background-color: #fff;
+	border-style: inset;
+	padding: 0;
+	opacity: 0.2;
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.popup-hint {
+	opacity: 1;
+}
+.hint {
+	z-index: 11;
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	top: 12px;
+	width: calc(100% + 20px);
+	min-height: 60px;
+	border-radius: 7px;
+	align-items: center;
+	right: 48%;
+	margin-right: calc(100% / -2);
+	&-text {
+		font-family: $PTFont;
+		font-size: rem(12px);
+		color: #777777;
+		padding-left: 20px;
+		max-width: 176px;
+		&--reset {
+			max-width: 100%;
+			padding-left: 0;
+		}
+	}
+	&-wrapper {
+		width: 100%;
+		position: relative;
+	}
+	&__item {
+		list-style: disc;
+	}
+}
+
+label#inputSeries-error, label#inputNumber-error, label#inputCarcass-error, label#inputFrame-error, label#checkinputUse-error, label#checkinputYesNo-error {
+	display: none !important;
+}
+
+.form-content__field-input--company, .form-content__field-input--genSurname {
+	display: none;
+}
+
+button.form-footer__btn-next.valid {
+	border: none;
+}
+
+button.form-footer__btn-prev.valid {
+	border: none;
+}
+
+.submit-btn {
+	background-color: #2C2C2C;
+	color: #fff;
+	height: 60px;
+	white-space: nowrap;
+	border-radius: 7px;
+	font-family: $PTFont;
+	font-size: rem(18px);
+	width: 100%;
+	max-width: 320px;
+	@include sm(max-width, 375px);
+	@include lg(max-width, 425px);
+}
+
+.payment {
+	display: none;
+	max-width: 340px;
+	@include lg(max-width, 450px);
+	&-wrapper {
+		position: relative;
+		&::before {
+			content: url(/img/payment-car.png);
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		background-color: #fff;
+		border-radius: 7px;
+		padding: 80px 20px 30px 20px;
+	}
+	&__title {
+		font-size: rem(30px);
+		color: #2C2C2C;
+		margin-bottom: 30px;
+	}
+	&__price {
+		color: #2C2C2C;
+		font-size: rem(18px);
+		text-align: center;
+	}
+	&__desc {
+		color: #777777;
+		font-size: rem(16px);
+		font-family: $PTFont;
+		max-width: 270px;
+		line-height: 25px;
+		& span {
+			color: #2C2C2C;
+			font-weight: bold;
+		}
+		&--first {
+			margin-bottom: 20px;
+		}
+		&--second {
+			margin-bottom: 85px;
+		}
+		&--fourth {
+			margin-top: 20px;
+		}
+		&-btn {
+			font-size: rem(12px);
+			color: #B5B5B5;
+			opacity: 0.8;
+			font-family: $PTFont;
+			text-align: center;
+		}
+	}
+	&__submit-btn {
+		margin: 10px 0;
+	}
+}
+
+.bread-crumb {
+	display: none;
+}
+
+@media screen and (min-width: 375px) {
+	.form-content__field-block {
+		min-width: 320px;
+	}
+	.form-footer__btn-next {
+		width: 164px;
+	}
+}

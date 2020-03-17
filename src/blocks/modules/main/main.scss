@@ -1,23 +1,27 @@
 .main {
-	background-color: #EDB21C;
+	background: linear-gradient(180deg, #FFD567 0%, #D89A04 100%);
 	min-height: inherit;
 	@include align-center;
 	&-wrapper {
 		padding: 40px 28px 50px 28px;
+		@include lg(padding, 0 28px 50px 28px);
 	}
 	&__head {
-		margin-bottom: 60px;
+		margin-bottom: 20px;
+		@include md(margin-bottom, 60px);
 		&-title {
 			font-size: rem(30px);
-			line-height: rem(35px);
 			color: #fff;
 			margin-bottom: 10px;
+			@include lg(font-size, rem(36px));
 		}
 		&-desc {
 			font-family: $PTFont;
 			font-size: rem(16px);
 			line-height: rem(25px);
 			color: #FFF1CF;
+			max-width: 324px;
+			@include lg(font-size, rem(20px));
 		}
 	}
 	&__bottom {
@@ -25,29 +29,119 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
+			@include sm(justify-content, flex-start);
 		}
 		&-item {
 			padding: 5px;
+			&-bike {
+				position: relative;
+				&::before {
+					content: "Мотоцикл";
+					font-size: rem(18px);
+					color: #2C2C2C;
+					position: absolute;
+					left: 9.68%;
+					top: 13.7%;
+				}
+			}
+			&-sedan {
+				position: relative;
+				&::before {
+					content: "Легковой \0a автомобиль";
+					white-space: pre;
+					font-size: rem(18px);
+					color: #2C2C2C;
+					position: absolute;
+					left: 9.68%;
+					top: 13.7%;
+				}
+			}
+			&-truck {
+				position: relative;
+				&::before {
+					content: "Грузовик";
+					font-size: rem(18px);
+					color: #2C2C2C;
+					position: absolute;
+					left: 9.68%;
+					top: 13.7%;
+				}
+			}
+			&-bus {
+				position: relative;
+				&::before {
+					content: "Автобус";
+					font-size: rem(18px);
+					color: #2C2C2C;
+					position: absolute;
+					left: 9.68%;
+					top: 13.7%;
+				}
+			}
 		}
 		&-title {
 			font-size: rem(20px);
 			line-height: 27px;
 			color: #fff;
 			margin-bottom: 20px;
+			@include lg(font-size, rem(28px));
 		}
 		&-desc {
+			display: none;
+			margin-top: 20px;
 			font-family: $PTFont;
 			font-size: rem(12px);
 			line-height: 15px;
 			color: #FFF1CF;
 			opacity: 0.8;
 			text-align: center;
+			@include lg(font-size, rem(18px));
+			@include lg(display, block);
 		}
 		&-pic {
 			width: 146px;
+			@include lg(width, 200px);
+			border-radius: 7px;
 			&:hover, &:active {
 				opacity: 0.6;
 			}
 		}
 	} 
+}
+
+.auto-animation {
+	position: absolute;
+	left: -360%;
+	@include lg(left, -110%);
+	z-index: 100;
+	top: 30%;
+	// transition: all 4s ease-in-out;
+	// transform: translate(300%,0);
+	&::after {
+		content: url(/img/wheel-animate.png);
+		position: absolute;
+	    right: 101px;
+	    bottom: 21px;
+	    z-index: 101;
+	    // transform: rotate(360deg);
+	    // transition: all 4s linear;
+	}
+	&::before {
+		content: url(/img/wheel-animate.png);
+		position: absolute;
+	    left: 173px;
+	    bottom: 21px;
+	    z-index: 101;
+	    // transform: rotate(360deg);
+	    // transition: all 4s linear;
+	}
+	&-wrapper {
+		position: relative;
+	}
+}
+
+@media screen and (min-width: 1440px) { 
+	.main__head-title {
+		font-size: rem(50px);
+	}
 }
