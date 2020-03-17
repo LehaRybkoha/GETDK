@@ -54,6 +54,7 @@
 
 .osago .wrapper-section {
 	min-width: 340px;
+	@include lg(min-width, 475px);
 }
 
 .sravni-widget {

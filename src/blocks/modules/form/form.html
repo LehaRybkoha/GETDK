@@ -9,14 +9,14 @@
 					<div class="form-head">
 						<p class="form__first-step--text form__step--text">1<span>/5</span></p>
 						<h3 class="form__first-step--title form__step--title">Расскажите нам о своём<br>транспортном средстве</h3>
-						<p class="form__first-step--desc form__step--desc">Это ускорит расчет<br>стоимости прохождения ТО</p>
+						<p class="form__first-step--desc form__step--desc">Это необходимо для расчета стоимости прохождения ТО</p>
 					</div>
 					<div class="form-content">
 						<div class="form-content__field-block form-content__field-block">
-							<input name="inputMarkVeh" type="text" id="inputMarkVeh" class="form-content__field-input form-content__field-input--markVeh" placeholder="Марка т/с" required>
+							<input name="inputMarkVeh" type="text" id="inputMarkVeh" class="form-content__field-input form-content__field-input--markVeh" placeholder="Марка ТС" required>
 						</div>
 						<div class="form-content__field-block">
-							<input name="inputCarModel" type="text" id="inputCarModel" class="form-content__field-input form-content__field-input--carModel" placeholder="Модель автомобиля" required>
+							<input name="inputCarModel" type="text" id="inputCarModel" class="form-content__field-input form-content__field-input--carModel" placeholder="Модель ТС" required>
 						</div>
 						<div class="form-content__field-block">
 							<select name="releaseYear" id="selectReleaseYear" class="form-content__field-input form-content__field-input--releaseYear" required>
@@ -112,7 +112,7 @@
 					<div class="form-head">
 						<p class="form__second-step--text form__step--text">2<span>/5</span></p>
 						<h3 class="form__second-step--title form__step--title">Дополните необходимую<br>информацию</h3>
-						<p class="form__second-step--desc form__step--desc">Ответ на вопрос:<br>зачем я это ввожу?</p>
+						<p class="form__second-step--desc form__step--desc">Эти данные являются обязательными для прохождения ТО</p>
 					</div>
 					<div class="form-content">
 						<p class="form-content__advice">Гос.рег.номер (без запятых и пробелов)</p>
@@ -163,15 +163,15 @@
 				<div class="form__third-step">
 					<div class="form-head">
 						<p class="form__third-step--text form__step--text">3<span>/5</span></p>
-						<h3 class="form__third-step--title form__step--title">Данные документа</h3>
-						<p class="form__third-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
+						<h3 class="form__third-step--title form__step--title">Укажите данные одного из документов</h3>
+						<p class="form__third-step--desc form__step--desc">Это подтверждает, что ТС зарегистрировано в ГИБДД</p>
 					</div>
 					<div class="form-content">
 						<div class="form-content__field-block form-content__field-checkblock form-content__field-checkblockDocument">
 							<input сlass="form-content__field-checkinput checkinputDocument" type="radio" name="checkinputDocument" id="checkinputSRTS" value="СРТС">
-        					<label class="form-content__field-checkbox--document" for="checkinputSRTS">СРТС</label>
+        					<label class="form-content__field-checkbox--srts" for="checkinputSRTS">СРТС</label>
         					<input сlass="form-content__field-checkinput checkinputDocument" type="radio" name="checkinputDocument" id="checkinputPTS" value="ПТС">
-        					<label class="form-content__field-checkbox--document" for="checkinputPTS">ПТС</label>
+        					<label class="form-content__field-checkbox--pts" for="checkinputPTS">ПТС</label>
         					<input сlass="form-content__field-checkinput checkinputDocumentForeign checkinputDocument" type="radio" name="checkinputDocument" value="Иностранный документ" id="checkinputDocument">
         					<label class="form-content__field-checkbox--document" for="checkinputDocument">Иностранный документ</label>
 						</div>
@@ -216,8 +216,8 @@
 				<div class="form__fourth-step">
 					<div class="form-head">
 						<p class="form__fourth-step--text form__step--text">4<span>/5</span></p>
-						<h3 class="form__fourth-step--title form__step--title">Данные документа</h3>
-						<p class="form__fourth-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
+						<h3 class="form__fourth-step--title form__step--title">Дополните данные документа</h3>
+						<p class="form__fourth-step--desc form__step--desc">Они содержат данные о всех технических характеристиках ТС</p>
 					</div>
 					<div class="form-content">
 						<p class="form-content__advice">Номер VIN</p>
@@ -226,7 +226,7 @@
 								<input name="inputVin" type="text" id="inputVin" class="form-content__field-input input-hint--opacity form-content__field-input--vin" placeholder="17 символов" maxlength="17" minlength="17" required>
 								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 								<div class="hint">
-									<p class="hint-text">Используйте английские<br>буквы и цифры. Если VIN менее 17 символов, нажмите 'Нет'"</p>
+									<p class="hint-text">Формат - ООО Ромашка или ИП Иванов Иван Иванович</p>
 									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
 								</div>
 							</div>
@@ -238,7 +238,7 @@
 								<input name="inputCarcass" type="text" id="inputCarcass" class="form-content__field-input form-content__field-input--carcass" placeholder="Номер кузова" required>
 								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 								<div class="hint">
-									<p class="hint-text">Только английские буквы и цифры, а также сивол - (тире)</p>
+									<p class="hint-text">Только английские буквы и цифры, а также символ - (тире)</p>
 									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
 								</div>
 							</div>
@@ -254,7 +254,7 @@
 								<input name="inputFrame" type="text" id="inputFrame" class="form-content__field-input form-content__field-input--frame" placeholder="Номер шасси (рамы)" required>
 								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 								<div class="hint">
-									<p class="hint-text">Только английские буквы и цифры, а также сивол - (тире)</p>
+									<p class="hint-text">Только английские буквы и цифры, а также символ - (тире)</p>
 									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
 								</div>
 							</div>
@@ -319,17 +319,17 @@
 				<div class="form__five-step">
 					<div class="form-head">
 						<p class="form__five-step--text form__step--text">5<span>/5</span></p>
-						<h3 class="form__five-step--title form__step--title">Владелец т/с</h3>
-						<p class="form__five-step--desc form__step--desc">Ответ на вопрос: зачем я это ввожу?</p>
+						<h3 class="form__five-step--title form__step--title">Укажите владельца ТС</h3>
+						<p class="form__five-step--desc form__step--desc">Осталось совсем чуть-чуть...<br>Расчет почти завершен!</p>
 					</div>
 					<div class="form-content">
 						<div class="form-content__person">
 							<div class="form-content__field-checkblock form-content__field-checkblockPerson form-content__field-checkblock--big">
-								<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPersonCountry" id="checkinputHabitant">
+								<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPersonCountry" id="checkinputHabitant" checked>
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputHabitant">Гражданин РФ</label>
         						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPersonCountry" id="checkinputForeign">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person" for="checkinputForeign">Иностранный гражданин</label>
-        						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPhisical" id="checkinputPhisical">
+        						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPhisical" id="checkinputPhisical" checked>
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person disable--js" for="checkinputPhisical">Физическое лицо</label>
         						<input сlass="form-content__field-checkinput checkinputPerson" type="radio" name="checkinputPhisical" id="checkinputEntity">
         						<label class="form-content__field-checkbox--big form-content__field-checkbox--person disable--js" for="checkinputEntity">Юридическое лицо</label>
@@ -337,19 +337,26 @@
 						</div>
 						<hr class="form__line form__line--person" >
 						<div class="form-content__field-block">
-							<input type="text" id="inputCompany" name="inputCompany" class="form-content__field-input form-content__field-input--company" placeholder="Название организации/ИП" required>
+							<div class="hint-wrapper">
+								<input type="text" id="inputCompany" name="inputCompany" class="form-content__field-input form-content__field-input--company" placeholder="Название организации/ИП" required>
+								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
+								<div class="hint">
+									<p class="hint-text">Используйте английские<br>буквы и цифры. Если VIN менее 17 символов, нажмите 'Нет'"</p>
+									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
+								</div>
+							</div>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputGenSurname" class="form-content__field-input form-content__field-input--genSurname" placeholder="Фамилия генерального директора" required>
+							<input type="text" name="inputGenSurname" id="inputGenSurname" class="form-content__field-input form-content__field-input--genSurname" placeholder="Фамилия генерального директора" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputSurname" class="form-content__field-input form-content__field-input--surname" placeholder="Фамилия владельца т/с" required>
+							<input type="text" name="inputSurname" id="inputSurname" class="form-content__field-input form-content__field-input--surname" placeholder="Фамилия владельца ТС" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputName" class="form-content__field-input form-content__field-input--name" placeholder="Имя" required>
+							<input type="text" name="inputName" id="inputName" class="form-content__field-input form-content__field-input--name" placeholder="Имя" required>
 						</div>
 						<div class="form-content__field-block">
-							<input type="text" id="inputPatronymic" class="form-content__field-input form-content__field-input--patronymic" placeholder="Отчество" required>
+							<input type="text" name="inputPatronymic" id="inputPatronymic" class="form-content__field-input form-content__field-input--patronymic" placeholder="Отчество">
 						</div>
 					</div>
 					<div class="form-footer">

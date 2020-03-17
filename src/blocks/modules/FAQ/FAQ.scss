@@ -7,9 +7,9 @@
 	padding: 40px 13px 10px;
 	&__title {
 		margin-bottom: 65px;
-		max-width: 246px;
 		&-text {
 			font-size: rem(30px);
+			@include lg(font-size, rem(36px));
 			line-height: 45px;
 			color: #fff;
 		}
@@ -24,8 +24,10 @@
 				justify-content: center;
 				&--text {
 					color: #fff;
-					max-width: 191px;
 					font-size: rem(18px);
+					@include lg(font-size, rem(24px));
+					@include xl(font-size, rem(28px));
+					@include lg(line-height, 38px);
 					line-height: 25px;
 					margin-right: 80px;
 				}
@@ -33,6 +35,7 @@
 			&-text {
 				font-family: $PTFont;
 				font-size: rem(16px);
+				@include lg(font-size, rem(20px));
 				line-height: 25px;
 				color: #FFF1CF;
 				max-width: 320px;

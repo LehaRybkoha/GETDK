@@ -2,12 +2,15 @@ import 'jquery-validation';
 import 'jquery-mask-plugin';
 let docType;
 let notes;
-let owType;
+let owType = "Гражданин РФ Физическое лицо";
 $(document).ready(function() {
 	const form = $("#form");
 	const vin = $("#inputVin");
 	const frame = $("#inputFrame");
 	const carcass = $("#inputCarcass");
+    const maxMass = $("#inputMaxMass");
+    const minMass = $("#inputMinMass");
+
     // $('.header').mouseover(function() {
     //     console.log(notes);
     //     console.log(docType);
@@ -40,6 +43,23 @@ $(document).ready(function() {
         var expression = new RegExp(params);
         return this.optional(element) || expression.test(value);
     });
+ //    if(empty.val() > permanent.val()) {
+ // //         permanent.addClass('error')
+ // //         permanent.val("");
+ // //         alert("Разрешенная масса должна быть больше Массы без нагрузки, пожалуйста, проверьте данные и введите их еще раз.");
+ // // //     }
+ //    $(".form__second-step").validate({
+ //        lengthCheck: function() {
+ //            if(minMass.val() > maxMass.val()) {
+ //                alert("false");
+ //                return false;
+ //            } else {
+ //                alert("suka");
+ //            }
+ //        },
+ //        submitHandler: function() { alert("Submitted!") },
+ //    });
+
     form.validate({
     	rules: {
     		inputMarkVeh: {
@@ -80,10 +100,25 @@ $(document).ready(function() {
     			regexp: /^[А-я\d]+$/g
     		},
             inputCompany: {
-                regexp: /^[А-я\d]+$/g
+                regexp: /^[А-я\d\s"]+$/g
             },
             email: {
                 email: true
+            },
+            inputSurname: {
+                regexp: /^[А-я]+$/g
+            },
+            inputName: {
+                regexp: /^[А-я]+$/g
+            },
+            inputPatronymic: {
+                regexp: /^[А-я]+$/g
+            },
+            inputGenSurname: {
+                regexp: /^[А-я]+$/g
+            },
+            inputDate: {
+                minlength: 10
             }
     	},
     	messages: {
@@ -92,14 +127,52 @@ $(document).ready(function() {
     		inputMileage: "Неправильно заполнено поле",
     		inputGosNum: "Неправильно заполнено поле",
     		inputMinMass: "Неправильно заполнено поле",
-    		inputMaxMass: "Неправильно заполнено поле"
+    		inputMaxMass: "Неправильно заполнено поле",
+            inputCompany: "Неправильно заполнено поле",
+            inputSurname: "Неправильно заполнено поле",
+            inputName: "Неправильно заполнено поле",
+            inputPatronymic: "Неправильно заполнено поле",
     	}
     });
+    // function checkMass() {
+    //     let maxVal = minMass.val();
+    //     let minVal = maxMass.val();
 
+    //     if (maxVal.length > 0 && minVal.length > 0) {
+    //         if (maxVal > minVal || minVal < maxVal) {
+    //             alert("yeah");
+    //         }
+    //     }        
+    // }
+    // let i = 0;
+    // while (i = 0) {
+    //     checkMass()
+    // }
+    $(maxMass, minMass).on("blur", function(){
+        let maxVal = minMass.val();
+        let minVal = maxMass.val();
+
+        if (maxVal.length > 0 && minVal.length > 0) {
+            if (maxVal > minVal || minVal < maxVal) {
+                alert("yeah");
+            }
+        }
+    });
+
+    $(".input-hint").mouseenter(function() {
+         $(this).parent().find(".hint").css("display", "flex");
+         $(this).parent().find(".hint").css("transition", "0.5s");
+         $(this).parent().find(".input-hint--opacity").css("opacity", "0.5");
+    });
     $(".input-hint").click(function() {
-    	 $(this).parent().find(".hint").css("display", "flex");
-    	 $(this).parent().find(".hint").css("transition", "0.5s");
-    	 $(this).parent().find(".input-hint--opacity").css("opacity", "0.5");
+         $(this).parent().find(".hint").css("display", "flex");
+         $(this).parent().find(".hint").css("transition", "0.5s");
+         $(this).parent().find(".input-hint--opacity").css("opacity", "0.5");
+    });
+    $(".hint").mouseleave(function() {
+         $(".input-hint").parent().find(".hint").css("display", "none");
+         $(".input-hint").parent().find(".hint").css("transition", "0.5s");
+         $(".input-hint").parent().find(".input-hint--opacity").css("opacity", "1");
     });
     $(".hint-cancel").click(function() {
     	$(".input-hint").parent().find(".hint").css("display", "none");
@@ -248,9 +321,9 @@ $(document).ready(function() {
             $("#inputMark").attr("disabled", "disabled");
             $("#inputMark").removeClass("error");
         } else if($(this).prop("checked") == false) {
-            $("#inputSerieNum").removeAttr("disabled");
-            $("#inputSerieNum").attr("required", "required")
-            $("#inputSerieNum").val("");
+            $("#inputMark").removeAttr("disabled");
+            $("#inputMark").attr("required", "required")
+            $("#inputMark").val("");
         }
     });
     $("#checkinputModel").click(function(){
@@ -371,18 +444,14 @@ $(document).ready(function() {
         $(".form-footer__btn-prev").css("background-color", "#fff");
     });
      $(".form__six-step").change(function() {
-      let $step = $(this),
+        let $step = $(this),
         $submitBtn = $step.find(".submit-btn");
-
-      $step.find(".form-content__field-input").each(function() {
-        let length = $step.find(".form-content__field-input.valid").length;
-        if (length == 1) {
-          $submitBtn.removeAttr("disabled");
-        } 
-        if ($(".form-content__field-input").hasClass("error")) {
-            $submitBtn.attr("disabled", "disabled");
-        }
-      });
+            if ($("#inputEmail, #inputPhone").hasClass("valid")) {
+                 $submitBtn.removeAttr("disabled");
+            } 
+            if ($("#inputEmail, #inputPhone").hasClass("error")) {
+                $submitBtn.attr("disabled", "disabled");
+            }
     });
     // $(".form__first-step").find(".form-content__field-input").change(function(){
     //     if($(this).valid()) {
@@ -519,6 +588,7 @@ $(function() {
     let tahoSerial = $("#inputSerieNum").val();
     let tahoMake = $("#checkinputMark").val();
     let tahoModel = $("#checkinputModel").val();
+    
 
       $('#form').submit(function(e) {
         var $form = $(this);

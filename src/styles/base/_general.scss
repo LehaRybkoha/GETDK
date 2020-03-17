@@ -9,7 +9,10 @@ select {
     -webkit-appearance: none;
     appearance: none;
 }
-
+option[selected] {
+    opacity: 0.5;
+    color: #fff;
+}
 h1, h2, h3, h4, h5, h6, ul {
     padding: 0;
     margin: 0;
@@ -43,7 +46,13 @@ button[disabled], input[disabled] {
     opacity: 0.5;
     cursor: auto;
 }
-
+input:not([type=checkbox]):not([type=radio]),
+textarea, 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 input, select {
     border: none;
     &:focus {
@@ -62,6 +71,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 fieldset {
     border: none;
+    padding: 0;
 }
 
 .wrapper {

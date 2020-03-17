@@ -2,3 +2,10 @@
     display: flex;
     align-items: center;
 }
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {color:#777777;}
+	&::-moz-placeholder          {color:777777;}
+	&:-moz-placeholder           {color:#777777;}
+	&:-ms-input-placeholder      {color:#777777;}
+}
