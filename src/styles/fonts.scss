@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Avenir Next';
+    src: local('Avenir Next Bold'), local('Avenir-Next-Bold'),
+        url('/fonts/AvenirNextCyr-Bold.woff2') format('woff2'),
+        url('/fonts/AvenirNextCyr-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PT Root UI';
+    src: local('PT Root UI Medium'), local('PTRootUI-Medium'), 
+    url('/fonts/Ptrootuimedium.woff2') format('woff2'), 
+    url('/fonts/Ptrootuimedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}

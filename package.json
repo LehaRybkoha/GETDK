@@ -66,6 +66,8 @@
     },
     "dependencies": {
         "jquery": "^3.4.1",
+        "jquery-mask-plugin": "^1.14.16",
+        "jquery-validation": "^1.19.1",
         "smart-grid": "^2.1.2"
     }
 }
