@@ -590,55 +590,111 @@ $(function() {
     let tahoModel = $("#checkinputModel").val();
     
 
-      $('#form').submit(function(e) {
-        var $form = $(this);
-        $(this).attr('disabled', true);
-        $.ajax({
-          type: $form.attr('method'),
-          url: $form.attr('action'),
-          data: {
-            make:make,
-            model:model,
-            yearMake:yearMake,
-            mileage:mileage,
-            regSign:regSign,
-            fuel:fuel,
-            minWeight:minWeight,
-            maxWeight:maxWeight,
-            typeDoc:typeDoc,
-            checkYear:checkYear,
-            checkFuel:checkFuel,
-            checkBreaks:checkBreaks,
-            checkTires:checkTires,
-            checkMilage:checkMilage,
-            serial:serial,
-            number:number,
-            date:date,
-            vin:vin,
-            bodyNum:bodyNum,
-            chassis:chassis,
-            note:note,
-            typeOw:typeOw,
-            compName:compName,
-            compSurn:compSurn,
-            owSurname:owSurname,
-            owName:owName,
-            owParent:owParent,
-            tahoSerial:tahoSerial,
-            tahoMake:tahoMake,
-            tahoModel:tahoModel,
-            },
-        }).done(function() {
-          console.log('success');
-          $('.form').hide();
-          $('.payment').show();
-          $('body').scrollTop(5000);
-            const el = document.getElementById('form');
-            el.scrollIntoView(); // Прокрутка до верхней границы
-        }).fail(function() {
-          console.log('fail');
-        });
-        //отмена действия по умолчанию для кнопки submit
-        e.preventDefault(); 
-      });
-    });
+      // $('#form').submit(function(e) {
+      //   var $form = $(this);
+      //   $(this).attr('disabled', true);
+      //   $.ajax({
+      //     type: $form.attr('method'),
+      //     url: $form.attr('action'),
+      //     data: {
+      //       make:make,
+      //       model:model,
+      //       yearMake:yearMake,
+      //       mileage:mileage,
+      //       regSign:regSign,
+      //       fuel:fuel,
+      //       minWeight:minWeight,
+      //       maxWeight:maxWeight,
+      //       typeDoc:typeDoc,
+      //       checkYear:checkYear,
+      //       checkFuel:checkFuel,
+      //       checkBreaks:checkBreaks,
+      //       checkTires:checkTires,
+      //       checkMilage:checkMilage,
+      //       serial:serial,
+      //       number:number,
+      //       date:date,
+      //       vin:vin,
+      //       bodyNum:bodyNum,
+      //       chassis:chassis,
+      //       note:note,
+      //       typeOw:typeOw,
+      //       compName:compName,
+      //       compSurn:compSurn,
+      //       owSurname:owSurname,
+      //       owName:owName,
+      //       owParent:owParent,
+      //       tahoSerial:tahoSerial,
+      //       tahoMake:tahoMake,
+      //       tahoModel:tahoModel,
+      //       },
+      //   }).done(function() {
+      //     console.log('success');
+      //     $('.form').hide();
+      //     $('.payment').show();
+      //     $('body').scrollTop(5000);
+      //       const el = document.getElementById('form');
+      //       el.scrollIntoView(); // Прокрутка до верхней границы
+      //   }).fail(function() {
+      //     console.log('fail');
+      //   });
+      //   //отмена действия по умолчанию для кнопки submit
+      //   e.preventDefault(); 
+      // });
+      window.onload = function () {
+        document.getElementsByClassName('submit-btn').onclick = function() {
+            e.preventDefault(); 
+            axios({
+                method: 'post',
+                url: '/wp-json/forms/v1/send/1',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-WP-Nonce': window.themeVars._wpnonce
+                },
+                data: {
+                    make:make,
+                    model:model,
+                    yearMake:yearMake,
+                    mileage:mileage,
+                    regSign:regSign,
+                    fuel:fuel,
+                    minWeight:minWeight,
+                    maxWeight:maxWeight,
+                    typeDoc:typeDoc,
+                    checkYear:checkYear,
+                    checkFuel:checkFuel,
+                    checkBreaks:checkBreaks,
+                    checkTires:checkTires,
+                    checkMilage:checkMilage,
+                    serial:serial,
+                    number:number,
+                    date:date,
+                    vin:vin,
+                    bodyNum:bodyNum,
+                    chassis:chassis,
+                    note:note,
+                    typeOw:typeOw,
+                    compName:compName,
+                    compSurn:compSurn,
+                    owSurname:owSurname,
+                    owName:owName,
+                    owParent:owParent,
+                    tahoSerial:tahoSerial,
+                    tahoMake:tahoMake,
+                    tahoModel:tahoModel,
+                },
+            }).then( () => {
+              res.innerHTML = 'Form was successfully sent!';
+              form.reset();
+              console.log('success');
+              $('.form').hide();
+              $('.payment').show();
+              $('body').scrollTop(5000);
+                const el = document.getElementById('form');
+                el.scrollIntoView();
+            }).catch( () => {
+                console.log('fail'); 
+            });
+        };
+    };
+});
