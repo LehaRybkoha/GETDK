@@ -119,14 +119,40 @@
                 var vin = $("#inputVin");
                 var frame = $("#inputFrame");
                 var carcass = $("#inputCarcass");
-                    if (frame.val().length < 1 && carcass.val().length < 1 && vin.val().length < 1) {
-                        $("#inputVin").attr("required", "required");
-                        $("#inputVin-error").show();
-                        $("#inputVin").removeAttr("disabled");
-                        $("#checkinputVin:checked").prop("checked", false);
-                        $(".inputCarcass").removeClass("error");
-                        $(".inputFrame").removeClass("error");
+                var maxMass = $("#inputMaxMass");
+                var minMass = $("#inputMinMass");
+                var maxMassLabel = '<label id="inputMaxMass-errorv2" class="errorv2" for="inputMaxMass" style="display: none;">Неправильно заполнено поле</label>';
+                
+                if (frame.val().length < 1 && carcass.val().length < 1 && vin.val().length < 1) {
+                    // $("label#inputVin-error").attr("style", "display:none!important");
+                    // $("<style>label#inputVin-error{display:none!important;}</style>").appendTo(".hint-wrapper");
+                    // $("<style>label#inputCarcass-error{display:none!important;}</style>").appendTo(".hint-wrapper");
+                    // $("<style>label#inputFrame-error{display:none!important;}</style>").appendTo(".hint-wrapper");
+                    // $("label#inputCarcass-error").css("display", "none!important");
+                    $("#inputVin, #inputCarcass, #inputFrame").attr("required", "required");
+                    $("#inputVin, #inputCarcass, #inputFrame").removeClass("error");
+                    $("#inputVin, #inputCarcass, #inputFrame").removeAttr("disabled");
+                    $("#checkinputVin:checked, #checkinputCarcass:checked, #checkinputFrame:checked").prop("checked", false);
+                    // $("#inputVin-error, #inputCarcass-error, #inputFrame-error").attr("style", "display:none;");
+                } else {
+                    $("style").empty();
+                    $("#inputVin-error, #inputCarcass-error, #inputFrame-error").attr("style", "display:none;");
                 }
+                // if (frame.val().length > 1 && carcass.val().length > 1 && vin.val().length > 1) {
+                //     $("style").empty();
+                // }
+                // console.log(minMass.val() + " " + maxMass.val());
+                // if(minMass.val() > maxMass.val()) {
+                //     $(minMass).addClass("error");
+                //     $(maxMass).removeClass("valid");
+                //     $("#inputMaxMass-errorv2").text("");
+                //     $(maxMassLabel).insertAfter(maxMass);
+                //     $("#inputMaxMass-errorv2").show();
+                //     $("#inputMinMass-error").show();
+                //     $(minMass).valid() == true;
+                // } else {
+                //     alert("suka");
+                // }
                 /* Check to see if the forms are valid before moving on */
 
                 if (active.find(":input").valid()) {

@@ -109,36 +109,36 @@
 	} 
 }
 
-.auto-animation {
-	position: absolute;
-	left: -360%;
-	@include lg(left, -110%);
-	z-index: 100;
-	top: 30%;
-	// transition: all 4s ease-in-out;
-	// transform: translate(300%,0);
-	&::after {
-		content: url(/img/wheel-animate.png);
-		position: absolute;
-	    right: 101px;
-	    bottom: 21px;
-	    z-index: 101;
-	    // transform: rotate(360deg);
-	    // transition: all 4s linear;
-	}
-	&::before {
-		content: url(/img/wheel-animate.png);
-		position: absolute;
-	    left: 173px;
-	    bottom: 21px;
-	    z-index: 101;
-	    // transform: rotate(360deg);
-	    // transition: all 4s linear;
-	}
-	&-wrapper {
-		position: relative;
-	}
-}
+// .auto-animation {
+// 	position: absolute;
+// 	left: -360%;
+// 	@include lg(left, -110%);
+// 	z-index: 100;
+// 	top: 30%;
+// 	// transition: all 4s ease-in-out;
+// 	// transform: translate(300%,0);
+// 	&::after {
+// 		content: url(/img/wheel-animate.png);
+// 		position: absolute;
+// 	    right: 101px;
+// 	    bottom: 21px;
+// 	    z-index: 101;
+// 	    // transform: rotate(360deg);
+// 	    // transition: all 4s linear;
+// 	}
+// 	&::before {
+// 		content: url(/img/wheel-animate.png);
+// 		position: absolute;
+// 	    left: 173px;
+// 	    bottom: 21px;
+// 	    z-index: 101;
+// 	    // transform: rotate(360deg);
+// 	    // transition: all 4s linear;
+// 	}
+// 	&-wrapper {
+// 		position: relative;
+// 	}
+// }
 
 @media screen and (min-width: 1440px) { 
 	.main__head-title {

@@ -18,7 +18,7 @@
 						<div class="form-content__field-block">
 							<input name="inputCarModel" type="text" id="inputCarModel" class="form-content__field-input form-content__field-input--carModel" placeholder="Модель ТС" required>
 						</div>
-						<div class="form-content__field-block">
+						<div class="select-block form-content__field-block">
 							<select name="releaseYear" id="selectReleaseYear" class="form-content__field-input form-content__field-input--releaseYear" required>
 							<option value="" disabled selected>Год выпуска</option>
 							<option value="2020">2020</option>
@@ -95,7 +95,7 @@
 							</select>
 						</div>
 						<div class="form-content__field-block">
-							<input name="inputMileage" id="inputMileage" class="form-content__field-input form-content__field-input--mileage" type="number" pattern="[0-9]*" placeholder="Пробег" required>
+							<input name="inputMileage" id="inputMileage" class="form-content__field-input form-content__field-input--mileage" type="number" inputmode="numeric" pattern="[0-9]*" placeholder="Пробег" required>
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
 					</div>
@@ -128,7 +128,7 @@
 							<input сlass="form-content__field-checkinput" type="checkbox" name="checkinputGosNum" id="checkinputGosNum">
         					<label class="form-content__field-checkbox--full" for="checkinputGosNum">Нет</label>
 						</div>
-						<div class="form-content__field-block">
+						<div class="select-block form-content__field-block">
 							<select name="fuelType" id="selectFuelType" class="form-content__field-input form-content__field-input--fuelType" required><option value="" disabled selected>Тип топлива</option>
 							<option value="Бензин">Бензин</option>
 							<option value="Дизель">Дизель</option>
@@ -141,7 +141,7 @@
 							<input name="inputMinMass" type="number" pattern="[0-9]*" id="inputMinMass" class="form-content__field-input form-content__field-input--minMass" placeholder="Введите число" required>
 						</div>
 							<p class="form-content__advice">Максимальная масса</p>
-						<div class="form-content__field-block">
+						<div class="form-content__field-block form-content__field-maxBlock">
 							<input name="inputMaxMass" type="number" pattern="[0-9]*" id="inputMaxMass" class="form-content__field-input input-hint--opacity form-content__field-input--maxMass" placeholder="Число, которое больше мин. массы" required>
 							<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 							<div class="hint">
@@ -178,7 +178,7 @@
 						<hr class="form__line" >
 						<div class="form-content__field-block form-content__field-halfblock">
 							<input name="inputSeries" type="text" id="inputSeries" class="form-content__field-input form-content__field-input--series" placeholder="Серия" maxlength="4" required>
-							<input name="inputNumber" type="text" id="inputNumber" class="form-content__field-input input-hint--opacity form-content__field-input--number" placeholder="Номер" maxlength="6" minlength="6" required>
+							<input name="inputNumber" type="text" id="inputNumber" class="form-content__field-input input-hint--opacity form-content__field-input--number" placeholder="Номер" inputmode="numeric" maxlength="6" minlength="6" required>
 							<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 							<div class="hint">
 								<ol class="hint__list">
@@ -200,7 +200,7 @@
 						</div>
 						<p class="form-content__advice">Дата выдачи документа</p>
 						<div class="form-content__field-block">
-							<input name="inputDate" type="text" id="inputDate" class="form-content__field-input form-content__field-input--date" placeholder="ДД.ММ.ГГГГ" required>
+							<input name="inputDate" type="text" id="inputDate" class="form-content__field-input form-content__field-input--date" inputmode="numeric" placeholder="ДД.ММ.ГГГГ" required>
 						</div>
 						<p class="form-content__desc">Все поля обязательны для заполнения</p>
 						</div>
@@ -220,13 +220,19 @@
 						<p class="form__fourth-step--desc form__step--desc">Они содержат данные о всех технических характеристиках ТС</p>
 					</div>
 					<div class="form-content">
-						<p class="form-content__advice">Номер VIN</p>
 						<div class="form-content__field-block form-content__field-checkblock">
 							<div class="hint-wrapper">
-								<input name="inputVin" type="text" id="inputVin" class="form-content__field-input input-hint--opacity form-content__field-input--vin" placeholder="17 символов" maxlength="17" minlength="17" required>
+								<input name="inputVin" type="text" id="inputVin" class="form-content__field-input input-hint--opacity form-content__field-input--vin" placeholder="Номер VIN" maxlength="17" minlength="17" required>
 								<button type="button" class="input-hint"><i class="hint-icon fas fa-info"></i></button>
 								<div class="hint">
-									<p class="hint-text">Используйте английские<br>буквы и цифры. Если VIN менее 17 символов, нажмите 'Нет'"</p>
+									<ol class="hint__list">
+										<li class="hint__item">
+											<p class="hint-text hint-text--reset">Если VIN содержит менее 17 символов или имеет сторонние знаки, нажмите "Нет".</p>
+										</li>
+										<li class="hint__item">
+											<p class="hint-text hint-text--reset">Если при этом также отсутствует "Номер кузова" или "Номер шасси (рамы)", запишите VIN в "Номер кузова".</p>
+										</li>
+									</ol>
 									<button type="button" class="popup-hint"><i class="fas fa-times hint-cancel"></i></button>
 								</div>
 							</div>
@@ -265,7 +271,7 @@
         						<label class="form-content__field-checkbox--half" for="checkinputSameFrame">Как Vin</label>
 							</div>
 						</div>
-						<p class="form-content__desc form-content__desc-fourth">Одно из полей должно быть обязательно заполнено</p>
+						<p class="form-content__desc form-content__desc-fourth">Одно из полей (VIN, Кузов, Шасси) обязательно должно быть заполнено</p>
 						<div class="form-content__use">
 							<h3 class="form-content__use-title form-content__add-title">Использование т/с</h3>
 							<div class="form-content__field-checkblock checkblock-using form-content__field-checkblock--big">
@@ -384,7 +390,7 @@
 						</div>
 					</div>
 					<div class="form-footer form-footer-six">
-						<button class="submit-btn" type="submit" disabled>Рассчитать стоимость</button>
+						<button class="submit-btn" type="submit">Рассчитать стоимость</button>
 						<p class="form-footer__desc form-footer__desc-six">Мы не передаем информацию третьим лицам</p>
 					</div>
 				</div>

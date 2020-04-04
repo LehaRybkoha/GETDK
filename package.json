@@ -1,10 +1,10 @@
 {
-    "name": "gulp-scss-starter",
-    "description": "Frontend development with pleasure",
-    "author": "Andrey Gorokhov",
+    "name": "GETDK",
+    "description": "Web-site GETDK",
+    "author": "Aleksei",
     "repository": {
         "type": "git",
-        "url": "https://github.com/andreyalexeich/gulp-scss-starter.git"
+        "url": "https://github.com/LehaRybkoha/GETDK.git"
     },
     "license": "MIT",
     "scripts": {
@@ -66,6 +66,8 @@
     },
     "dependencies": {
         "jquery": "^3.4.1",
+        "jquery-mask-plugin": "^1.14.16",
+        "jquery-validation": "^1.19.1",
         "smart-grid": "^2.1.2"
     }
 }

@@ -1,4 +1,5 @@
 import 'jquery-validation';
+import '../../../js/import/quickWizard/quickWizard.js';
 import 'jquery-mask-plugin';
 let docType;
 let notes;
@@ -10,6 +11,36 @@ $(document).ready(function() {
 	const carcass = $("#inputCarcass");
     const maxMass = $("#inputMaxMass");
     const minMass = $("#inputMinMass");
+    let make = $("#inputMarkVeh").val();
+    let model = $("#inputCarModel").val();
+    let yearMake = $("#selectReleaseYear").val();
+    let mileage = $("#inputMileage").val();
+    let regSign = $("#inputGosNum").val();
+    let fuel = $("#selectFuelType").val();
+    let minWeight = $("#inputMinMass").val();
+    let maxWeight = $("#inputMaxMass").val();
+    let typeDoc = docType;
+    let checkYear = $("#checkYear").val();
+    let checkFuel = $("#checkFuel").val();
+    let checkBreaks = $("#checkBreaks").val();
+    let checkTires = $("#checkTires").val();
+    let checkMilage = $("#checkMilage").val();
+    let serial = $("#inputSeries").val();
+    let number = $("#inputNumber").val();
+    let date = $("#inputDate").val();
+    let vinVal = $("#inputVin").val();
+    let bodyNum = $("#inputCarcass").val();
+    let chassis = $("#inputFrame").val();
+    let note = notes;
+    let typeOw = owType;
+    let compName = $("#inputCompany").val();
+    let compSurn = $("#inputGenSurname").val();
+    let owSurname = $("#inputSurname").val();
+    let owName = $("#inputName").val();
+    let owParent = $("#inputPatronymic").val();
+    let tahoSerial = $("#inputSerieNum").val();
+    let tahoMake = $("#checkinputMark").val();
+    let tahoModel = $("#checkinputModel").val();
 
     // $('.header').mouseover(function() {
     //     console.log(notes);
@@ -21,6 +52,9 @@ $(document).ready(function() {
     $("#inputDate").mask("00.00.0000");
     $("#inputPhone").mask("+7 (000) 000-00-00");
 
+    // $(document).ready(function() {
+    //     $('select').niceSelect();
+    // });
 
     jQuery.extend(jQuery.validator.messages, {
 	    required: "Поле должно быть заполнено",
@@ -43,6 +77,12 @@ $(document).ready(function() {
         var expression = new RegExp(params);
         return this.optional(element) || expression.test(value);
     });
+
+    // jQuery.validator.addMethod("minDate", function (value, element) {
+    //     var now = new Date();
+    //     var myDate = new Date(value);
+    //     return this.optional(element) || myDate > now;
+    // });
  //    if(empty.val() > permanent.val()) {
  // //         permanent.addClass('error')
  // //         permanent.val("");
@@ -122,7 +162,7 @@ $(document).ready(function() {
             }
     	},
     	messages: {
-    		inputVin: "Хотя бы одно из трёх полей должно быть заполнено. Если ваш VIN содержит менее 17 символов, то впишите его в поле 'Номер Кузова",
+    		inputVin: "<ol><li>Используйте только английские буквы и цифры.</li><li>Если VIN содержит менее 17 символов или имеет сторонние знаки, нажмите 'Нет'</li><li>Если при этом также отсутствует 'Номер кузова'' или 'Номер шасси (рамы)', запишите VIN в 'Номер кузова'</li></ol>",
     		inputMarkVeh: "Неправильно заполнено поле",
     		inputMileage: "Неправильно заполнено поле",
     		inputGosNum: "Неправильно заполнено поле",
@@ -132,8 +172,65 @@ $(document).ready(function() {
             inputSurname: "Неправильно заполнено поле",
             inputName: "Неправильно заполнено поле",
             inputPatronymic: "Неправильно заполнено поле",
-    	}
+            inputCarcass: "<ol><li>Используйте только английские буквы, цифры и символы</li></ol>",
+            inputFrame: "<ol><li>Используйте только английские буквы, цифры и символы</li></ol>",
+    	},
+        submitHandler: function(form) {
+            $(form).submit(function(e) {
+            var $form = $("#form");
+            $(this).attr('disabled', true);
+            $.ajax({
+              type: $form.attr('method'),
+              url: $form.attr('action'),
+              data: {
+                make:make,
+                model:model,
+                yearMake:yearMake,
+                mileage:mileage,
+                regSign:regSign,
+                fuel:fuel,
+                minWeight:minWeight,
+                maxWeight:maxWeight,
+                typeDoc:typeDoc,
+                checkYear:checkYear,
+                checkFuel:checkFuel,
+                checkBreaks:checkBreaks,
+                checkTires:checkTires,
+                checkMilage:checkMilage,
+                serial:serial,
+                number:number,
+                date:date,
+                vinVal:vinVal,
+                bodyNum:bodyNum,
+                chassis:chassis,
+                note:note,
+                typeOw:typeOw,
+                compName:compName,
+                compSurn:compSurn,
+                owSurname:owSurname,
+                owName:owName,
+                owParent:owParent,
+                tahoSerial:tahoSerial,
+                tahoMake:tahoMake,
+                tahoModel:tahoModel,
+                },
+            }).done(function() {
+              console.log('success');
+              $('.form').hide();
+              $('.payment').show();
+              $('body').scrollTop(5000);
+                const el = document.getElementById('form');
+                el.scrollIntoView(); // Прокрутка до верхней границы
+            }).fail(function() {
+              console.log('fail');
+            });
+            //отмена действия по умолчанию для кнопки submit
+            e.preventDefault(); 
+          });
+        }
     });
+
+    
     // function checkMass() {
     //     let maxVal = minMass.val();
     //     let minVal = maxMass.val();
@@ -158,7 +255,11 @@ $(document).ready(function() {
     //         }
     //     }
     // });
-
+    // $("#inputVin").keyup(function() {
+    //     if ($("#inputVin").val().length > 1) {
+    //         $("style").empty();
+    //     }
+    // })
     $(".input-hint").mouseenter(function() {
          $(this).parent().find(".hint").css("display", "flex");
          $(this).parent().find(".hint").css("transition", "0.5s");
@@ -169,10 +270,10 @@ $(document).ready(function() {
          $(this).parent().find(".hint").css("transition", "0.5s");
          $(this).parent().find(".input-hint--opacity").css("opacity", "0.5");
     });
-    $(".hint").mouseleave(function() {
-         $(".input-hint").parent().find(".hint").css("display", "none");
-         $(".input-hint").parent().find(".hint").css("transition", "0.5s");
-         $(".input-hint").parent().find(".input-hint--opacity").css("opacity", "1");
+    $(".input-hint").mouseleave(function() {
+         $(this).parent().find(".hint").css("display", "none");
+         $(this).parent().find(".hint").css("transition", "0.5s");
+         $(this).parent().find(".input-hint--opacity").css("opacity", "1");
     });
     $(".hint-cancel").click(function() {
     	$(".input-hint").parent().find(".hint").css("display", "none");
@@ -180,45 +281,42 @@ $(document).ready(function() {
     	 $(".input-hint").parent().find(".input-hint--opacity").css("opacity", "1");
     });
 
-    $("#bike, #sedan, #bus, #truck").click(function(){
-        $(".auto-animation").css("transform", "translateX(500%)")
-        $(".auto-animation").css("transition", "all 5s ease-in-out")
-        $(".auto-animation").css("will-change", "transform");
-        $(".auto-animation").css("will-change", "transform");
-        let transitionAnimate = "all 4s ease-in-out";
-        let transformAnimate = "rotate(5000deg)";
-        $("<style>.auto-animation:before{transition:" + transitionAnimate + "}</style>").appendTo(".auto-animation");
-        $("<style>.auto-animation:before{transform:" + transformAnimate + "}</style>").appendTo(".auto-animation");
-        $("<style>.auto-animation:after{transition:" + transitionAnimate + "}</style>").appendTo(".auto-animation");
-        $("<style>.auto-animation:after{transform:" + transformAnimate + "}</style>").appendTo(".auto-animation");
-        // $(".auto-animation,.auto-animation ").cssAfter("transform", "translate(300%,0)");
+     $("#bike, #sedan, #bus, #truck").click(function(){
+        $(".email-link").css("color", "#2C2C2C");
+        // $(".auto-animation").css("transition", "all 5s ease-in-out")
+        // $(".auto-animation").css("will-change", "transform");
+        // $(".auto-animation").css("will-change", "transform");
+        // let transitionAnimate = "all 4s ease-in-out";
+        // let transformAnimate = "rotate(5000deg)";
+        // $("<style>.auto-animation:before{transition:" + transitionAnimate + "}</style>").appendTo(".auto-animation");
+        // $("<style>.auto-animation:before{transform:" + transformAnimate + "}</style>").appendTo(".auto-animation");
+        // $("<style>.auto-animation:after{transition:" + transitionAnimate + "}</style>").appendTo(".auto-animation");
+        // $("<style>.auto-animation:after{transform:" + transformAnimate + "}</style>").appendTo(".auto-animation");
+        // // $(".auto-animation,.auto-animation ").cssAfter("transform", "translate(300%,0)");
     });
 
+
     $("#bike, #sedan").click(function(){
-        setTimeout(function() {
-             $(".form-section").css("display", "flex");
-             $(".form-content__tachograph").css("display", "none");
-             $(".logo-link").css("position", "absolute");
-             $(".logo-link").css("left", "42%");
-             $(".logo-link").css("bottom", "25%");
-             $(".logo-desc, .main").hide();
-             $(".header").css("position", "relative");
-             $(".header").css("background-color", "#fff");
-        }, 3000);
+         $(".form-section").css("display", "flex");
+         $(".form-content__tachograph").css("display", "none");
+         $(".logo-link").css("position", "absolute");
+         $(".logo-link").css("left", "42%");
+         $(".logo-link").css("bottom", "25%");
+         $(".logo-desc, .main").hide();
+         $(".header").css("position", "relative");
+         $(".header").css("background-color", "#fff");
     });
 
 
     $("#bus, #truck").click(function(){
-        setTimeout(function() {
-        	 $(".form-section").css("display", "flex");
-        	 $(".logo-link").css("position", "absolute");
-        	 $(".logo-link").css("left", "42%");
-        	 $(".logo-link").css("bottom", "25%");
-        	 $(".logo-desc, .form-content__use, .main").hide();
-        	 $(".header").css("position", "relative");
-             $(".header").css("background-color", "#fff");
-             $(".email").css("color", "#2C2C2C");
-        }, 3000);
+         $(".form-section").css("display", "flex");
+         $(".logo-link").css("position", "absolute");
+         $(".logo-link").css("left", "42%");
+         $(".logo-link").css("bottom", "25%");
+         $(".logo-desc, .form-content__use, .main").hide();
+         $(".header").css("position", "relative");
+         $(".header").css("background-color", "#fff");
+         $(".email").css("color", "#2C2C2C");
     });
 
 
@@ -251,6 +349,9 @@ $(document).ready(function() {
     		$("#inputSeries").removeAttr("disabled");
     	}
     });
+    $(".form-content__field-semicheckblock").find('input[type="checkbox"]').on('change', function() {
+        $(this).siblings('input[type="checkbox"]').not(this).prop('checked', false);
+    });
     $("#checkinputVin").click(function(){
     	if($(this).prop("checked") == true) {
             $("#inputVin-error").hide();
@@ -258,7 +359,12 @@ $(document).ready(function() {
             $("#inputVin").attr("disabled", "disabled");
             $("#inputVin").removeClass("error");
             $("#inputVin").val("");
+            $("#checkinputSameCarcass:checked, #checkinputSameFrame:checked").prop("checked", false);
+            $("label[for='checkinputSameCarcass'], label[for='checkinputSameFrame']").css("opacity", "0.5");
+            $("#checkinputSameCarcass, #checkinputSameFrame").attr("disabled", "true");
     	} else if($(this).prop("checked") == false) {
+            $("#checkinputSameCarcass, #checkinputSameFrame").removeAttr("disabled");
+            $("label[for='checkinputSameCarcass'], label[for='checkinputSameFrame']").css("opacity", "1");
             $("#inputVin").removeAttr("disabled");
             $("#inputVin").attr("required", "required");
             $("#inputVin").val("");
@@ -266,9 +372,11 @@ $(document).ready(function() {
     });
      $("#checkinputCarcass").click(function(){
     	if($(this).prop("checked") == true) {
+            $("#inputCarcass-error").hide();
             $("#inputCarcass").removeAttr("required");
             $("#inputCarcass").attr("disabled", "disabled");
             $("#inputCarcass").removeClass("error");
+            $("#inputCarcass").val("");
     	} else if($(this).prop("checked") == false) {
     		$("#inputCarcass").removeAttr("disabled");
     		$("#inputCarcass").attr("required", "required")
@@ -285,9 +393,11 @@ $(document).ready(function() {
     });
     $("#checkinputFrame").click(function(){
     	if($(this).prop("checked") == true) {
+            $("#inputFrame-error").hide();
             $("#inputFrame").removeAttr("required");
             $("#inputFrame").attr("disabled", "disabled");
             $("#inputFrame").removeClass("error");
+            $("#inputFrame").val("");
     	} else if($(this).prop("checked") == false) {
             $("#inputFrame").removeAttr("disabled");
             $("#inputFrame").attr("required", "required")
@@ -423,14 +533,48 @@ $(document).ready(function() {
     });
 
 
-
+$(".form__second-step").find("button.form-wizard-next").focus(function() {
+        const maxMass = $("#inputMaxMass");
+        const minMass = $("#inputMinMass");
+        let maxMassLabel = '<label id="inputMaxMass-errorv2" class="errorv2" for="inputMaxMass">Неправильно заполнено поле</label>';
+        let minMassLabel = '<label id="inputMinMass-errorv2" class="errorv2" for="inputMinMass">Неправильно заполнено поле</label>';
+        $("#inputMaxMass").removeClass("valid");
+        $(".form-content__field-maxBlock").find(".hint").css("display", "flex");
+        $(".form-content__field-maxBlock").find(".hint").css("transition", "0.5s");
+        $(".form-content__field-maxBlock").find(".input-hint--opacity").css("opacity", "0.5");
+            if(minMass.val() > maxMass.val()) {
+                $(minMass).val("");
+                $(maxMass).val("");
+                $("input.content__field-input--maxMass").addClass("error");     
+                $(minMass).addClass("error");
+                $(maxMass).addClass("error");
+                $(minMass, maxMass).attr("aria-invalid", true);
+                $(maxMassLabel).insertAfter(maxMass);
+                $(minMassLabel).insertAfter(minMass);
+                maxMassLabel = "";
+                minMassLabel = "";
+            } else {
+                $(".form-content__field-maxBlock").find(".hint").css("display", "none");
+                $(".form-content__field-maxBlock").find(".hint").css("transition", "0.5s");
+                $(".form-content__field-maxBlock").find(".input-hint--opacity").css("opacity", "1");
+                $("label#inputMaxMass-errorv2").hide();
+                $("label#inputMinMass-errorv2").hide();
+            }
+            if ($("label#inputMaxMass-error, label#inputMinMass-error").css("display", "block")) {
+                $(".form-content__field-maxBlock").find(".hint").css("display", "none");
+                $(".form-content__field-maxBlock").find(".hint").css("transition", "0.5s");
+                $(".form-content__field-maxBlock").find(".input-hint--opacity").css("opacity", "1");
+                $("label#inputMaxMass-errorv2").hide();
+                $("label#inputMinMass-errorv2").hide();
+            }
+        });
 
     $(".form__five-step").find("button.form-wizard-next").click(function() {
         if ($(".fieldset__five-step").css("display") == "none") {
             $(".form-section").css("background", "linear-gradient(180deg, #FFD567 0%, #D89A04 100%)");
             $(".form-footer__btn-prev").css("background-color", "#FFDD84");
             $(".header").css("background-color", "#FFD567");
-            $(".email").css("color", "#fff");
+            $(".email-link").css("color", "#fff");
         }
     });
     $(".form__first-step").find("button.form-wizard-next").click(function() {
@@ -443,16 +587,16 @@ $(document).ready(function() {
         $(".header").css("background-color", "#fff");
         $(".form-footer__btn-prev").css("background-color", "#fff");
     });
-     $(".form__six-step").change(function() {
-        let $step = $(this),
-        $submitBtn = $step.find(".submit-btn");
-            if ($("#inputEmail, #inputPhone").hasClass("valid")) {
-                 $submitBtn.removeAttr("disabled");
-            } 
-            if ($("#inputEmail, #inputPhone").hasClass("error")) {
-                $submitBtn.attr("disabled", "disabled");
-            }
-    });
+    //  $(".form__six-step").change(function() {
+    //     let $step = $(this),
+    //     $submitBtn = $step.find(".submit-btn");
+    //         if ($("#inputEmail, #inputPhone").hasClass("valid")) {
+    //              $submitBtn.removeAttr("disabled");
+    //         } 
+    //         if ($("#inputEmail, #inputPhone").hasClass("error")) {
+    //             $submitBtn.attr("disabled", "disabled");
+    //         }
+    // });
     // $(".form__first-step").find(".form-content__field-input").change(function(){
     //     if($(this).valid()) {
     //         $(".form__first-step").find(".form-wizard-next").removeAttr("disabled");
@@ -554,91 +698,3 @@ $(document).ready(function() {
     //     }
     // });
 });
-
-
-
-$(function() {
-    let make = $("#inputMarkVeh").val();
-    let model = $("#inputCarModel").val();
-    let yearMake = $("#selectReleaseYear").val();
-    let mileage = $("#inputMileage").val();
-    let regSign = $("#inputGosNum").val();
-    let fuel = $("#selectFuelType").val();
-    let minWeight = $("#inputMinMass").val();
-    let maxWeight = $("#inputMaxMass").val();
-    let typeDoc = docType;
-    let checkYear = $("#checkYear").val();
-    let checkFuel = $("#checkFuel").val();
-    let checkBreaks = $("#checkBreaks").val();
-    let checkTires = $("#checkTires").val();
-    let checkMilage = $("#checkMilage").val();
-    let serial = $("#inputSeries").val();
-    let number = $("#inputNumber").val();
-    let date = $("#inputDate").val();
-    let vin = $("#inputVin").val();
-    let bodyNum = $("#inputCarcass").val();
-    let chassis = $("#inputFrame").val();
-    let note = notes;
-    let typeOw = owType;
-    let compName = $("#inputCompany").val();
-    let compSurn = $("#inputGenSurname").val();
-    let owSurname = $("#inputSurname").val();
-    let owName = $("#inputName").val();
-    let owParent = $("#inputPatronymic").val();
-    let tahoSerial = $("#inputSerieNum").val();
-    let tahoMake = $("#checkinputMark").val();
-    let tahoModel = $("#checkinputModel").val();
-    
-
-      $('#form').submit(function(e) {
-        var $form = $(this);
-        $(this).attr('disabled', true);
-        $.ajax({
-          type: $form.attr('method'),
-          url: $form.attr('action'),
-          data: {
-            make:make,
-            model:model,
-            yearMake:yearMake,
-            mileage:mileage,
-            regSign:regSign,
-            fuel:fuel,
-            minWeight:minWeight,
-            maxWeight:maxWeight,
-            typeDoc:typeDoc,
-            checkYear:checkYear,
-            checkFuel:checkFuel,
-            checkBreaks:checkBreaks,
-            checkTires:checkTires,
-            checkMilage:checkMilage,
-            serial:serial,
-            number:number,
-            date:date,
-            vin:vin,
-            bodyNum:bodyNum,
-            chassis:chassis,
-            note:note,
-            typeOw:typeOw,
-            compName:compName,
-            compSurn:compSurn,
-            owSurname:owSurname,
-            owName:owName,
-            owParent:owParent,
-            tahoSerial:tahoSerial,
-            tahoMake:tahoMake,
-            tahoModel:tahoModel,
-            },
-        }).done(function() {
-          console.log('success');
-          $('.form').hide();
-          $('.payment').show();
-          $('body').scrollTop(5000);
-            const el = document.getElementById('form');
-            el.scrollIntoView(); // Прокрутка до верхней границы
-        }).fail(function() {
-          console.log('fail');
-        });
-        //отмена действия по умолчанию для кнопки submit
-        e.preventDefault(); 
-      });
-    });
