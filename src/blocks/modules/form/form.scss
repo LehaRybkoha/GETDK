@@ -633,3 +633,121 @@ button.form-footer__btn-prev.valid {
 	padding-bottom: 5px;
 	list-style: disc;
 }
+.popup {
+	display: none;
+	position: absolute;
+	background-color: #F6F6F6;
+	@include lg(margin-left, -85px);
+	@include lg(border, 5px solid #E5BC12);
+	@include lg(width, 666px);
+	@include lg(width, 600px);
+	@include lg(top, 50%);
+	@include lg(margin-top, -240px);
+	min-height: 100%;
+	@include lg(min-height, 488px)
+	min-width: 100%;
+	z-index: 9999;
+	overflow: hidden;
+	&::after {
+		content: url(/img/carPopup.png);
+		top: 0;
+		position: absolute;
+		left: 200px;
+		@include lg(top, 50px);
+		@include lg(left, 450px);
+	}
+	&__title {
+		@include lg(margin-left, 42px);
+		&-text {
+			font-family: $AvenirFont;
+			font-size: rem(30px);
+			@include lg(font-size, 40px);
+			line-height: 40px;
+			color: #2C2C2C;
+			margin: 38px 0 22px 0;
+			max-width: 200px;
+			@include lg(margin, 20px 0 20px);
+			@include lg(max-width, 100%);
+		}
+		&-desc {
+			font-family: $PTFont;
+			font-weight: 500;
+			font-size: rem(20px);
+			@include lg(font-size, rem(22px));
+			color: #777777;
+			margin-bottom: 40px;
+			max-width: 355px;
+		}
+	}
+	&__list {
+		@include lg(display, flex);
+		@include lg(flex-wrap, wrap)
+		@include lg(justify-content, center)
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 11px;
+			&-text {
+				font-family: $PTFont;
+				font-weight: italic;
+				font-size: rem(18px);
+				@include lg(font-size, rem(20px));
+				line-height: 20px;
+				color: #333;
+				padding-left: 17px;
+				max-width: 190px;
+				&--round {
+					font-size: rem(18px);
+					@include lg(font-size, rem(20px));
+					font-family: $PTFont;
+					color: #000;
+					border: 3px solid #0054A6;
+					border-radius: 100%;
+					height: 45px;
+					width: 45px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+		&__footer {
+			margin-left: 13px;
+			margin-bottom: 30px;
+			@include sm(text-align, center);
+			@include sm(margin-left, 0);
+			&-text {
+				font-family: $AvenirFont;
+				font-weight: bold;
+				font-size: rem(18px);
+				@include lg(font-size, rem(20px));
+				color: #2C2C2C;
+				margin: 26px;
+				&--delete {
+					text-decoration: line-through;
+				}
+			}
+			&-button {
+				background-color: #FEC530;
+				@include lg(background-color, #0054A6);
+				border-radius: 5px;
+				color: #000;
+				@include lg(color, #fff);
+				font-size: rem(18px);
+				@include lg(font-size, rem(20px));
+				font-family: $PTFont;
+				font-weight: bold;
+				height: 60px;
+				padding: 0 30px;
+			}
+		}
+}
+.overlay {
+	display: none;
+	background-color: rgba(34, 34, 34, 0.8);
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9999;
+}

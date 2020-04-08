@@ -276,10 +276,46 @@ $(document).ready(function() {
          $(this).parent().find(".input-hint--opacity").css("opacity", "1");
     });
     $(".hint-cancel").click(function() {
-    	$(".input-hint").parent().find(".hint").css("display", "none");
-    	 $(".input-hint").parent().find(".hint").css("transition", "0.5s");
-    	 $(".input-hint").parent().find(".input-hint--opacity").css("opacity", "1");
+        $(".input-hint").parent().find(".hint").css("display", "none");
+         $(".input-hint").parent().find(".hint").css("transition", "0.5s");
+         $(".input-hint").parent().find(".input-hint--opacity").css("opacity", "1");
     });
+    $(".popup__footer-button, .overlay").click(function() {
+        $(".popup").attr("style", "display:none!important;");
+        $(".overlay").hide();
+    });
+    $(".fieldset__first-step").find(".form-wizard-next").click(function() {
+        if ($(window).width() >= '992' && $('.fieldset__second-step').css('display') !== 'none') {
+            setTimeout(function() {
+                    $(".overlay").fadeIn();
+                    $("#form-wizard-prev").css("display", "none!important");
+            }, 200);
+                setTimeout(function() {
+                    $(".popup").fadeIn();
+            }, 500);
+        } else if ($(window).width() < '992' && $('.fieldset__second-step').css('display') !== 'none') {
+                let currentScrollTop = $(window).scrollTop();
+                $('html, body').animate({'scrollTop': currentScrollTop + -500}, 400);
+                $(".popup").fadeIn();
+        } else {
+            $(".overlay").hide();
+        }
+    });
+    
+        $(window).on('load resize', function() {
+            if ($(window).width() >= '992' && $('.fieldset__second-step').css('display') !== 'none') {
+                setTimeout(function() {
+                    $(".overlay").fadeIn();
+                    $("#form-wizard-prev").css("display", "none!important");
+            }, 200);
+                setTimeout(function() {
+                    $(".popup").fadeIn();
+            }, 400);
+
+            } else {
+                $(".overlay").hide();
+            }
+        });
 
      $("#bike, #sedan, #bus, #truck").click(function(){
         $(".email-link").css("color", "#2C2C2C");
